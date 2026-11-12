@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-error": "#ffffff", "inverse-primary": "#c3c0ff", "surface-tint": "#5148d7", "surface-bright": "#faf8ff", "secondary": "#00687a", "primary-container": "#4338ca", "outline": "#777586", "on-surface-variant": "#464554", "on-primary-container": "#c1beff", "tertiary-fixed-dim": "#4edea3", "background": "#faf8ff", "tertiary-container": "#005e3f", "on-error-container": "#93000a", "tertiary-fixed": "#6ffbbe", "surface-variant": "#dae2fd", "secondary-fixed-dim": "#4cd7f6", "inverse-on-surface": "#eef0ff", "primary-fixed-dim": "#c3c0ff", "on-tertiary": "#ffffff", "on-surface": "#131b2e", "on-secondary-container": "#006172", "tertiary": "#00442d", "on-primary-fixed": "#100069", "surface-container-low": "#f2f3ff", "error": "#ba1a1a", "on-tertiary-fixed-variant": "#005236", "surface-dim": "#d2d9f4", "on-tertiary-fixed": "#002113", "on-tertiary-container": "#4ddda2", "error-container": "#ffdad6", "surface-container-high": "#e2e7ff", "on-primary": "#ffffff", "surface-container-highest": "#dae2fd", "surface-container-lowest": "#ffffff", "secondary-container": "#57dffe", "secondary-fixed": "#acedff", "on-secondary-fixed": "#001f26", "surface-container": "#eaedff", "outline-variant": "#c7c4d7", "on-background": "#131b2e", "inverse-surface": "#283044", "on-secondary-fixed-variant": "#004e5c", "surface": "#faf8ff", "on-secondary": "#ffffff", "primary-fixed": "#e3dfff", "on-primary-fixed-variant": "#372abf", "primary": "#2a14b4" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-sm": "0.5rem", "gutter": "1rem", "space-md": "0.75rem", "space-xs": "0.25rem", "space-xl": "2rem", "gutter-lg": "1.5rem", "margin-md": "1.5rem", "margin-lg": "2.5rem", "margin": "1rem", "space-lg": "1.25rem" }, "fontFamily": { "body-md": ["Geist"], "display-sm": ["Space Grotesk"], "headline-sm": ["Space Grotesk"], "mono-metric": ["Geist"], "body-sm": ["Geist"], "label-md": ["Geist"], "headline-lg": ["Space Grotesk"], "display-lg": ["Space Grotesk"], "body-lg": ["Geist"], "label-sm": ["Geist"] }, "fontSize": { "body-md": ["0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "-0.005em", "fontWeight": "400" }], "display-sm": ["2.25rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.03em", "fontWeight": "600" }], "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "mono-metric": ["1.5rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-sm": ["0.75rem", { "lineHeight": "1.125rem", "letterSpacing": "0em", "fontWeight": "400" }], "label-md": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-lg": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "display-lg": ["3.5rem", { "lineHeight": "3.75rem", "letterSpacing": "-0.04em", "fontWeight": "700" }], "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "400" }], "label-sm": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.06em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest flex flex-col z-50 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary font-headline-sm text-headline-sm">P</div><div><div class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface flex items-center gap-space-xs">PulsePay<span class="text-primary font-bold">AI</span></div><div class="font-label-sm text-label-sm uppercase tracking-wider text-outline">v2.5 Release</div></div></div></div><nav class="flex-1 px-gutter py-space-md space-y-1 overflow-y-auto" data-active-classes="bg-primary text-on-primary font-medium rounded-lg shadow-sm"><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="overview" href="#"><span>Overview</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="my-invoices" href="#"><span>My Invoices</span><span class="font-label-sm text-label-sm bg-surface-container text-on-surface px-space-xs py-0.5 rounded-lg">18</span></a><a aria-current="page" class="group flex items-center justify-between px-space-md py-space-sm transition-colors bg-primary text-on-primary font-medium rounded-lg shadow-sm" data-path="create-invoice" href="#"><span>Create Invoice</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="ai-payment-insights" href="#"><span>AI Payment Insights</span><span class="font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed-variant font-bold px-space-xs py-0.5 rounded-lg">AI</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="client-payment-history" href="#"><span>Client Payment History</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="payment-follow-ups" href="#"><span>Payment Follow-ups</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="paypal-payments" href="#"><span>PayPal Payments</span><span class="font-label-sm text-label-sm bg-surface-container text-on-surface px-space-xs py-0.5 rounded-lg">Sandbox</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="settings" href="#"><span>Settings</span></a></nav><div class="p-gutter bg-surface-container-low space-y-space-md"><div class="flex items-center justify-between px-space-sm py-space-xs bg-surface-container-lowest rounded-lg"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface">127.0.0.1:8001</span></div><span class="font-label-sm text-label-sm text-tertiary-container font-semibold uppercase">Live</span></div><div class="flex items-center gap-space-md"><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="min-w-0 flex-1"><div class="font-label-md text-label-md font-semibold text-on-surface truncate">Alex Rivers</div><div class="font-body-sm text-body-sm text-on-surface-variant truncate">Freelance Pro Tier</div></div><button class="text-outline hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[18px]">more_vert</span></button></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter-lg flex items-center justify-between gap-gutter"><div class="flex items-center gap-gutter"><div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant"><span class="hover:text-on-surface cursor-pointer">Home</span><span class="text-outline">/</span><span class="hover:text-on-surface cursor-pointer">Invoicing</span><span class="text-outline">/</span><span class="text-on-surface font-semibold">Create Invoice</span></div><div class="flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span>Sandbox Live</span></div></div><div class="flex items-center gap-space-md flex-1 max-w-md justify-end"><div class="relative w-full max-w-xs"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full h-9 pl-9 pr-3 rounded-lg bg-surface-container-lowest font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-[0_1px_4px_rgba(0,0,0,0.02)]" placeholder="Search transactions, invoices..." type="text"/></div><div class="flex items-center gap-space-xs"><button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" title="Refresh" type="button"><span class="material-symbols-outlined text-[20px]">refresh</span></button><button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface relative transition-colors" title="Notifications" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-xs"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Content Canvas: Light Analytical Grid Environment -->
+<div class="px-margin-lg py-margin-md max-w-[1720px] mx-auto w-full space-y-space-lg">
+<!-- Top Breadcrumb & Machine Telemetry Status Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="space-y-space-xs">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<span class="hover:text-primary cursor-pointer transition-colors">Home</span>
+<span class="text-outline-variant">/</span>
+<span class="hover:text-primary cursor-pointer transition-colors">Payment Command Center</span>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface font-semibold">Create Invoice</span>
+</div>
+<div class="flex items-center gap-space-md">
+<h1 class="font-headline-lg text-headline-lg tracking-tight text-on-surface">Create Invoice &amp; Smart Contract Wizard</h1>
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+            v2.5 Analytical Engine
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+          Issue AI-verified freelance invoices with milestone escrow, automated PayPal Sandbox settlement links, and deterministic risk scoring.
+        </p>
+</div>
+<!-- Action Cluster & System Badges -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-sm">
+<div class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-surface-container-low shadow-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-mono">SQLite WAL Active</span>
+<span class="text-outline-variant text-[10px]">•</span>
+<span class="font-label-sm text-label-sm text-primary font-mono">FastAPI:8001</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="h-9 px-space-md rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container-low transition-colors shadow-sm font-label-md text-label-md flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px] text-outline">description</span>
+<span>Templates</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface-variant text-[10px] font-semibold">3 Drafts</span>
+</button>
+<button class="h-9 px-space-md rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container-low transition-colors shadow-sm font-label-md text-label-md flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">cloud_download</span>
+<span>Import SOW</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Wizard Stepper Indicator -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md relative">
+<!-- Step 1 (Completed) -->
+<div class="flex items-center gap-space-md group cursor-pointer">
+<div class="w-8 h-8 rounded-lg bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-label-md text-label-md shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="min-w-0">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Step 01</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate block">Client &amp; Project Meta</span>
+</div>
+</div>
+<!-- Step 2 (Active) -->
+<div class="flex items-center gap-space-md group">
+<div class="w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center font-label-md text-label-md shadow-sm ring-4 ring-primary-fixed shrink-0">
+<span>02</span>
+</div>
+<div class="min-w-0">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold block">Current Focus</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate block">Deliverables &amp; Scope</span>
+</div>
+</div>
+<!-- Step 3 (Upcoming) -->
+<div class="flex items-center gap-space-md opacity-60">
+<div class="w-8 h-8 rounded-lg bg-surface-container text-on-surface-variant flex items-center justify-center font-label-md text-label-md shrink-0">
+<span>03</span>
+</div>
+<div class="min-w-0">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Step 03</span>
+<span class="font-label-md text-label-md font-medium text-on-surface truncate block">Escrow &amp; Milestones</span>
+</div>
+</div>
+<!-- Step 4 (Upcoming) -->
+<div class="flex items-center gap-space-md opacity-60">
+<div class="w-8 h-8 rounded-lg bg-surface-container text-on-surface-variant flex items-center justify-center font-label-md text-label-md shrink-0">
+<span>04</span>
+</div>
+<div class="min-w-0">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Step 04</span>
+<span class="font-label-md text-label-md font-medium text-on-surface truncate block">AI Risk Audit &amp; Dispatch</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Dynamic Two-Column Console Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: Form Engine & Configuration (65% canvas -> 8 cols on desktop) -->
+<form class="lg:col-span-8 space-y-space-lg" id="createInvoiceForm" onsubmit="event.preventDefault(); createInvoice();">
+<!-- SECTION A: Client & Entity Billing Profile -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-4 bg-primary rounded-full"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Client &amp; Billing Protocol</h2>
+</div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider px-space-xs py-0.5 rounded bg-surface-container text-outline">Section 01/03</span>
+</div>
+<!-- Form Fields Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Client Selector -->
+<div class="space-y-space-xs">
+<label class="font-label-md text-label-md text-on-surface flex items-center justify-between" for="clientSelect">
+<span>Select Client Organization</span>
+<button class="text-primary hover:text-primary-container font-label-sm text-label-sm" type="button">+ New Client</button>
+</label>
+<div class="relative">
+<select class="w-full h-10 px-3 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer" id="clientSelect">
+<option selected="" value="hyperion">Hyperion Global Inc. (San Francisco, CA)</option>
+<option value="nexus">Nexus Labs Inc. (Bengaluru, IN)</option>
+<option value="aurora">Aurora Ventures GmbH (Berlin, DE)</option>
+<option value="veritas">Veritas Autonomous Robotics (Austin, TX)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- AP Email Address -->
+<div class="space-y-space-xs">
+<label class="font-label-md text-label-md text-on-surface" for="clientEmail">Accounts Payable (AP) Dispatch Email</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">alternate_email</span>
+<input class="w-full h-10 pl-9 pr-3 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary" id="clientEmail" placeholder="billing@client.com" type="email" value="ap-settlements@hyperionglobal.io"/>
+</div>
+</div>
+<!-- Tax Identifier -->
+<div class="space-y-space-xs">
+<label class="font-label-md text-label-md text-on-surface" for="clientTax">Tax Identifier / GSTIN / VAT Reg</label>
+<input class="w-full h-10 px-3 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary" id="clientTax" placeholder="Enter GST or EU VAT ID" type="text" value="29AAACH7409R1ZZ (Karnataka ST)"/>
+</div>
+<!-- Currency Selection Matrix -->
+<div class="space-y-space-xs">
+<label class="font-label-md text-label-md text-on-surface">Base Currency Denomination</label>
+<div class="flex items-center gap-space-xs bg-surface-container-low p-1 rounded-lg">
+<button class="flex-1 py-1 px-space-xs rounded-md bg-surface-container-lowest text-primary font-semibold text-center text-label-md shadow-sm" type="button">
+                  INR (₹ Indian Rupee)
+                </button>
+<button class="flex-1 py-1 px-space-xs rounded-md text-on-surface-variant hover:text-on-surface text-center text-label-md transition-colors" type="button">
+                  USD ($ United States)
+                </button>
+<button class="flex-1 py-1 px-space-xs rounded-md text-on-surface-variant hover:text-on-surface text-center text-label-md transition-colors" type="button">
+                  EUR (€ Eurozone)
+                </button>
+</div>
+</div>
+<!-- Invoice Reference Auto-Sequence -->
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface" for="invoiceNumber">Invoice Serial Index</label>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container text-primary font-mono font-medium">Auto-Sequence</span>
+</div>
+<input class="w-full h-10 px-3 bg-surface-container-low rounded-lg font-mono text-body-md text-on-surface focus:outline-none select-all" id="invoiceNumber" readonly="" type="text" value="#INV-2024-009"/>
+</div>
+<!-- Payment Terms & Due Date -->
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface" for="invoiceDueDate">Payment Schedule Terms</label>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Net-15 Optimal</span>
+</div>
+<select class="w-full h-10 px-3 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer" id="invoiceDueDate">
+<option selected="" value="15">Net-15 Days (Recommended by AI • Due Nov 28, 2024)</option>
+<option value="0">Due Immediately on Receipt</option>
+<option value="30">Net-30 Days (Due Dec 13, 2024)</option>
+<option value="escrow">Milestone Escrow (Tranche Release)</option>
+</select>
+</div>
+</div>
+<!-- AI Telemetry Directive Notification Banner -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">smart_toy</span>
+<div class="space-y-0.5">
+<div class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-space-xs">
+<span>Autonomous Payment Telemetry Notice</span>
+<span class="px-1.5 py-0.2 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-bold">94% Confidence</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Hyperion Global exhibits an average settlement window of 4.2 days when paired with strict Net-15 terms and automated PayPal Sandbox instant checkout links.
+              </p>
+</div>
+</div>
+</div>
+<!-- SECTION B: Deliverables, Line Items & Milestones (Scope of Work) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center justify-between flex-wrap gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-4 bg-primary rounded-full"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Deliverables &amp; Scope Allocation</h2>
+</div>
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm text-outline">
+<span>Currency: <strong class="text-on-surface font-semibold">INR (₹)</strong></span>
+<span>•</span>
+<span>3 Active Scope Units</span>
+</div>
+</div>
+<!-- Item Table Container -->
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead class="bg-surface-container-low text-on-surface-variant uppercase font-label-sm text-label-sm tracking-wider">
+<tr>
+<th class="py-2.5 px-3 rounded-l-lg">Deliverable Item &amp; SOW Description</th>
+<th class="py-2.5 px-3 w-16 text-center">Qty</th>
+<th class="py-2.5 px-3 w-32 text-right">Unit Rate (₹)</th>
+<th class="py-2.5 px-3 w-20 text-center">Tax</th>
+<th class="py-2.5 px-3 w-36 text-right">Amount (₹)</th>
+<th class="py-2.5 px-3 rounded-r-lg w-10 text-center"></th>
+</tr>
+</thead>
+<tbody class="space-y-1">
+<!-- Item 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3 px-3">
+<input class="w-full bg-transparent font-medium text-on-surface focus:outline-none" type="text" value="Brand Identity &amp; Design System Tokens"/>
+<span class="text-[11px] text-outline block">Figma multi-brand token system &amp; CSS exports</span>
+</td>
+<td class="py-3 px-3 text-center">
+<input class="w-12 text-center bg-surface-container-low rounded py-1 font-mono text-on-surface focus:outline-none" type="number" value="1"/>
+</td>
+<td class="py-3 px-3 text-right">
+<input class="w-24 text-right bg-surface-container-low rounded py-1 px-2 font-mono text-on-surface focus:outline-none" type="text" value="45,000"/>
+</td>
+<td class="py-3 px-3 text-center font-mono text-outline">0%</td>
+<td class="py-3 px-3 text-right font-mono font-semibold text-on-surface">₹45,000</td>
+<td class="py-3 px-3 text-center">
+<button class="text-outline hover:text-error transition-colors p-1" title="Remove line item" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</td>
+</tr>
+<!-- Item 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3 px-3">
+<input class="w-full bg-transparent font-medium text-on-surface focus:outline-none" type="text" value="Responsive Frontend Architecture (React + Tailwind)"/>
+<span class="text-[11px] text-outline block">12-column dynamic desktop consoles with micro-interactions</span>
+</td>
+<td class="py-3 px-3 text-center">
+<input class="w-12 text-center bg-surface-container-low rounded py-1 font-mono text-on-surface focus:outline-none" type="number" value="1"/>
+</td>
+<td class="py-3 px-3 text-right">
+<input class="w-24 text-right bg-surface-container-low rounded py-1 px-2 font-mono text-on-surface focus:outline-none" type="text" value="75,000"/>
+</td>
+<td class="py-3 px-3 text-center font-mono text-outline">0%</td>
+<td class="py-3 px-3 text-right font-mono font-semibold text-on-surface">₹75,000</td>
+<td class="py-3 px-3 text-center">
+<button class="text-outline hover:text-error transition-colors p-1" title="Remove line item" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</td>
+</tr>
+<!-- Item 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3 px-3">
+<input class="w-full bg-transparent font-medium text-on-surface focus:outline-none" type="text" value="FastAPI Backend &amp; SQLite Database Integration"/>
+<span class="text-[11px] text-outline block">WAL-mode ledger replication &amp; PayPal webhook processors</span>
+</td>
+<td class="py-3 px-3 text-center">
+<input class="w-12 text-center bg-surface-container-low rounded py-1 font-mono text-on-surface focus:outline-none" type="number" value="1"/>
+</td>
+<td class="py-3 px-3 text-right">
+<input class="w-24 text-right bg-surface-container-low rounded py-1 px-2 font-mono text-on-surface focus:outline-none" type="text" value="50,000"/>
+</td>
+<td class="py-3 px-3 text-center font-mono text-outline">0%</td>
+<td class="py-3 px-3 text-right font-mono font-semibold text-on-surface">₹50,000</td>
+<td class="py-3 px-3 text-center">
+<button class="text-outline hover:text-error transition-colors p-1" title="Remove line item" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Add Line Item Action -->
+<button class="w-full py-2.5 rounded-lg bg-surface-container-low text-primary hover:bg-surface-container transition-colors flex items-center justify-center gap-space-xs font-label-md text-label-md font-semibold" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Add Deliverable Line Item</span>
+</button>
+<!-- Milestone Split Escrow Setting -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[20px]">splitscreen</span>
+</div>
+<div>
+<span class="font-label-md text-label-md font-semibold text-on-surface block">Enable Smart Escrow Milestone Tranches</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">50% upfront deposit on dispatch (₹85,000) • 50% upon QA release verification (₹85,000).</span>
+</div>
+</div>
+<!-- Interactive Switch -->
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+<!-- SECTION C: Smart Contract & Gateway Telemetry Rules -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-4 bg-primary rounded-full"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Payment Gateway &amp; Smart Contract Rules</h2>
+</div>
+<div class="space-y-space-sm">
+<!-- PayPal Sandbox Webhook Rule -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-9 h-9 rounded-lg bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-semibold text-on-surface">PayPal Sandbox Gateway (Instant Webhook Reconcile)</span>
+<span class="px-1.5 py-0.2 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">Live Sandbox</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Generates verified PayPal checkout token; fires callback directly to <code class="text-primary font-mono text-[11px]">POST /api/v2/webhook/paypal</code> for automated ledger status advancement.</p>
+</div>
+</div>
+<input checked="" class="w-5 h-5 rounded text-primary accent-primary shrink-0 cursor-pointer mt-1" type="checkbox"/>
+</div>
+<!-- Late Fee Penalties Protocol -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-9 h-9 rounded-lg bg-error-container text-on-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Deterministic Late Fee Escalation</span>
+<span class="px-1.5 py-0.2 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">1.5% Past 14 Days</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Automatically amends ledger balance and smart contract penalty if settlement passes grace period without dispute filing.</p>
+</div>
+</div>
+<input checked="" class="w-5 h-5 rounded text-primary accent-primary shrink-0 cursor-pointer mt-1" type="checkbox"/>
+</div>
+<!-- Autonomous AI Follow-up Protocol -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-9 h-9 rounded-lg bg-primary-fixed text-on-primary-fixed-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">forward_to_inbox</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Enroll in PulsePay 4-Stage Autonomous Chase Protocol</span>
+<span class="px-1.5 py-0.2 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">AI Copilot</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Executes calibrated non-intrusive reminder emails via SMTP relay at T-3 days, Day 0, Day +4, and Day +7.</p>
+</div>
+</div>
+<input checked="" class="w-5 h-5 rounded text-primary accent-primary shrink-0 cursor-pointer mt-1" type="checkbox"/>
+</div>
+</div>
+</div>
+<!-- SECTION D: Interactive Action Control Matrix -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center gap-space-xs w-full sm:w-auto">
+<button class="w-full sm:w-auto h-10 px-space-md rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors font-label-md text-label-md font-medium flex items-center justify-center gap-1.5" id="saveDraftBtn" type="button">
+<span class="material-symbols-outlined text-[18px] text-outline">save</span>
+<span>Save as Draft</span>
+</button>
+<button class="w-full sm:w-auto h-10 px-space-md rounded-lg bg-surface-container text-primary hover:bg-surface-variant transition-colors font-label-md text-label-md font-semibold flex items-center justify-center gap-1.5" onclick="runAiAudit();" type="button">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+<span>Run AI Pre-Check</span>
+</button>
+</div>
+<div class="flex items-center gap-space-sm w-full sm:w-auto justify-end">
+<div class="text-right hidden sm:block">
+<span class="font-label-sm text-label-sm text-outline block">Total Payable</span>
+<span class="font-mono-metric text-mono-metric font-bold text-primary block leading-none" id="invoiceAmount">₹1,70,000</span>
+</div>
+<button class="w-full sm:w-auto h-11 px-space-xl rounded-lg bg-primary text-on-primary hover:bg-primary-container transition-colors font-label-md text-label-md font-semibold shadow-md flex items-center justify-center gap-space-xs" id="submitInvoiceBtn" type="submit">
+<span class="material-symbols-outlined text-[20px]">send_time_extension</span>
+<span>Generate &amp; Send Invoice</span>
+</button>
+</div>
+</div>
+</form>
+<!-- RIGHT COLUMN: Real-Time Preview & AI Predictive Telemetry (35% canvas -> 4 cols on desktop) -->
+<div class="lg:col-span-4 space-y-space-lg">
+<!-- CARD 1: Live Rendered Invoice Document Preview -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden relative">
+<!-- Document Chrome Header Bar -->
+<div class="bg-surface-container-high px-space-md py-2 flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-error/70"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary/70"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary/70"></span>
+<span class="font-label-sm text-label-sm font-mono text-outline ml-2">Preview: #INV-2024-009.pdf</span>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded text-on-surface font-semibold">Live Sandbox View</span>
+</div>
+<!-- Document Canvas Body -->
+<div class="p-space-lg space-y-space-md relative">
+<!-- Subtle Watermark Background Graphic -->
+<div class="absolute right-4 bottom-12 pointer-events-none opacity-5">
+<span class="font-headline-lg text-[130px] font-bold tracking-tighter text-on-surface select-none">PULSE</span>
+</div>
+<!-- Invoice Header & Brand Meta -->
+<div class="flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1.5">
+<div class="w-6 h-6 rounded bg-primary flex items-center justify-center text-on-primary font-bold text-xs">P</div>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">PulsePay AI</span>
+</div>
+<div class="font-body-sm text-body-sm text-outline mt-1">
+                  Alex Rivers • Senior Systems Architect<br/>
+                  GSTIN: 29AABCR8102Q1ZO
+                </div>
+</div>
+<div class="text-right">
+<span class="font-mono text-body-md font-bold text-primary block">#INV-2024-009</span>
+<span class="font-label-sm text-label-sm text-outline block">Issue Date: Nov 13, 2024</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold block">Due: Nov 28, 2024</span>
+</div>
+</div>
+<!-- Recipient Micro-Badge -->
+<div class="p-space-sm rounded-lg bg-surface-container-low space-y-0.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Billed To Entity</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface block">Hyperion Global Inc.</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">548 Market St, Suite 342, San Francisco, CA</span>
+</div>
+<!-- Itemized Line Summaries -->
+<div class="space-y-space-xs font-body-sm text-body-sm">
+<div class="flex justify-between py-1 border-b border-surface-container-high">
+<span class="text-on-surface">Brand Identity &amp; Tokens</span>
+<span class="font-mono font-medium text-on-surface">₹45,000</span>
+</div>
+<div class="flex justify-between py-1 border-b border-surface-container-high">
+<span class="text-on-surface">Frontend Architecture</span>
+<span class="font-mono font-medium text-on-surface">₹75,000</span>
+</div>
+<div class="flex justify-between py-1 border-b border-surface-container-high">
+<span class="text-on-surface">FastAPI &amp; SQLite Core</span>
+<span class="font-mono font-medium text-on-surface">₹50,000</span>
+</div>
+</div>
+<!-- Totals Ledger Calculation -->
+<div class="space-y-1 pt-2">
+<div class="flex justify-between font-body-sm text-body-sm text-outline">
+<span>Subtotal Scope:</span>
+<span class="font-mono">₹1,70,000.00</span>
+</div>
+<div class="flex justify-between font-body-sm text-body-sm text-outline">
+<span>Integrated Tax (0% SEZ/Export):</span>
+<span class="font-mono">₹0.00</span>
+</div>
+<div class="flex justify-between font-headline-sm text-headline-sm font-bold text-on-surface pt-1 border-t border-surface-container-high">
+<span>Total Due:</span>
+<span class="text-primary font-mono">₹1,70,000</span>
+</div>
+</div>
+<!-- Sandbox Checkout Integration Button -->
+<div class="space-y-space-xs pt-space-xs">
+<button class="w-full py-2.5 px-space-md rounded-lg bg-[#FFC439] hover:bg-[#F2BA36] transition-colors text-[#111111] font-semibold text-label-md flex items-center justify-center gap-space-xs shadow-sm" type="button">
+<!-- PayPal Monochrome Icon Graphic -->
+<svg class="h-4 w-auto fill-current" viewbox="0 0 100 32">
+<path d="M12.5 4.5h-7c-.6 0-1 .4-1.1 1l-3 19c-.1.4.2.8.6.8h3.8c.5 0 .9-.4 1-.9l.8-5.3c.1-.5.5-.9 1-.9h2.3c4.8 0 7.6-2.3 8.3-6.9.3-2 .1-3.6-.7-4.7-.9-1.3-2.6-2-5.7-2zm.8 6.8c-.4 2.8-2.3 2.8-4.3 2.8h-1.1l1.1-6.9h1.1c1.4 0 2.6 0 3.1.7.4.4.4 1.1.1 3.4z"></path>
+<path d="M31.2 10.9h-3.9c-.4 0-.8.3-.9.7l-.4 2.5-.6-.4c-.9-.9-2.3-1.3-3.8-1.3-3.6 0-6.6 2.7-7.2 6.6-.3 2 .2 3.9 1.4 5.2 1.1 1.2 2.6 1.8 4.4 1.8 3.1 0 4.8-2 4.8-2l-.4 2.4c-.1.4.2.8.6.8h3.5c.5 0 .9-.4 1-.9l2.4-15c.1-.4-.2-.8-.6-.8zm-4.8 7.3c-.3 1.9-1.9 3.2-3.8 3.2-1 0-1.8-.4-2.3-1s-.6-1.5-.4-2.5c.3-1.9 1.9-3.2 3.8-3.2 1 0 1.8.4 2.3 1 .6.6.6 1.5.4 2.5z"></path>
+</svg>
+<span>Pay ₹1,70,000 via PayPal Sandbox</span>
+</button>
+<div class="flex items-center justify-between text-[11px] text-outline font-mono pt-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-tertiary">lock</span>
+                  TLS 1.3 Certified
+                </span>
+<span>SHA-256 Ledger Hash: 4f98...91a2</span>
+</div>
+</div>
+<!-- Secondary QR & 1-Click Pay Link Strip -->
+<div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-space-xs">
+<!-- Inline SVG QR Placeholder for instant scanning -->
+<div class="w-10 h-10 bg-surface-container-lowest p-1 rounded border border-surface-container-high flex items-center justify-center">
+<svg class="w-full h-full text-on-surface" fill="currentColor" viewbox="0 0 24 24">
+<path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm8-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm14-2h2v2h-2v-2zm-4 0h2v2h-2v-2zm0 4h2v2h-2v-2zm4 0h2v2h-2v-2zm0 4h2v2h-2v-2zm-4 0h2v2h-2v-2z"></path>
+</svg>
+</div>
+<div>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface block">1-Click Client Settlement Link</span>
+<span class="font-body-sm text-body-sm text-outline block">https://pay.pulsepay.ai/inv/009-x7</span>
+</div>
+</div>
+<button class="p-1.5 rounded-md hover:bg-surface-container text-primary transition-colors" title="Copy Payment Link" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CARD 2: AI Risk Pre-Check & Deterministic Settlement Engine -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">AI Risk Pre-Check</h3>
+</div>
+<span class="font-mono text-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-primary font-bold">Inference v2.5</span>
+</div>
+<!-- Risk Metric Gauge Graphic -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="space-y-0.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Deterministic Risk Score</span>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-mono-metric text-mono-metric font-bold text-on-surface">18</span>
+<span class="font-label-md text-label-md text-outline">/ 100</span>
+<span class="ml-2 font-label-sm text-label-sm font-semibold text-tertiary px-1.5 py-0.5 bg-surface-container-lowest rounded">Safe Tier</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline block">Low dispute propensity: 0.02%</span>
+</div>
+<!-- Gauge Radial Progress Indicator (Inline SVG) -->
+<div class="relative w-14 h-14 shrink-0 flex items-center justify-center">
+<svg class="w-14 h-14 transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-highest stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="3"></path>
+<path class="text-tertiary stroke-current" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-dasharray="18, 100" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<span class="material-symbols-outlined absolute text-[20px] text-tertiary">shield</span>
+</div>
+</div>
+<!-- Settlement Velocity Analytical Module -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-outline block">Expected Velocity</span>
+<span class="font-mono text-label-md font-bold text-on-surface">4.8 Days</span>
+<span class="text-[10px] text-tertiary font-semibold block">96% AI Confidence</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-outline block">Historical Punctuality</span>
+<span class="font-mono text-label-md font-bold text-on-surface">98.2%</span>
+<span class="text-[10px] text-outline block">Based on 14 orders</span>
+</div>
+</div>
+<!-- Optimization Hint -->
+<div class="space-y-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary shrink-0 mt-0.5">schedule</span>
+<span><strong>Optimal Dispatch Window:</strong> Tuesday between 10:00 AM – 11:30 AM PST yields 24h faster AP approval for this client profile.</span>
+</div>
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0 mt-0.5">database</span>
+<span class="font-mono text-[11px] text-outline">SQLite WAL Commit Prepared • Row ID: 1503 in <code class="text-on-surface">freelancer_ledger.db</code></span>
+</div>
+</div>
+</div>
+<!-- CARD 3: Micro Client Sentiment & Relationship Metrics -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Relationship Health Matrix</span>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-primary font-bold text-xs">HG</div>
+<div>
+<span class="font-label-md text-label-md font-semibold text-on-surface block leading-tight">Hyperion Global</span>
+<span class="font-body-sm text-body-sm text-outline block leading-tight">Contract Active: 11 mos</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-tertiary font-label-sm text-label-sm font-semibold">Tier A+ Client</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Dynamic functions supporting PulsePay AI wizard actions
+  function runAiAudit() {
+    const btn = event.currentTarget;
+    const originalText = btn.innerHTML;
+    btn.innerHTML = `<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span><span>Running Telemetry...</span>`;
+    setTimeout(() => {
+      btn.innerHTML = `<span class="material-symbols-outlined text-[18px] text-tertiary">task_alt</span><span>Pre-Check Safe (18/100)</span>`;
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+      }, 3000);
+    }, 700);
+  }
+
+  function createInvoice() {
+    const submitBtn = document.getElementById('submitInvoiceBtn');
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = `<span class="material-symbols-outlined text-[20px] animate-spin">sync</span><span>Sealing SHA-256 &amp; SQLite WAL...</span>`;
+    
+    // Simulate FastAPI backend async invocation: POST /api/v2/invoices/create
+    setTimeout(() => {
+      submitBtn.innerHTML = `<span class="material-symbols-outlined text-[20px]">check_circle</span><span>Invoice Dispatched!</span>`;
+      submitBtn.classList.remove('bg-primary');
+      submitBtn.classList.add('bg-tertiary');
+      
+      // Optional callback confirmation alert banner
+      const notification = document.createElement('div');
+      notification.className = "fixed bottom-6 right-6 z-50 bg-inverse-surface text-inverse-on-surface px-space-md py-space-sm rounded-lg shadow-xl flex items-center gap-space-sm font-label-md text-label-md animate-bounce";
+      notification.innerHTML = `<span class="material-symbols-outlined text-tertiary-fixed text-[20px]">verified</span><span>#INV-2024-009 recorded in SQLite WAL &amp; PayPal webhook activated.</span>`;
+      document.body.appendChild(notification);
+
+      setTimeout(() => {
+        notification.remove();
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('bg-tertiary');
+        submitBtn.classList.add('bg-primary');
+        submitBtn.innerHTML = `<span class="material-symbols-outlined text-[20px]">send_time_extension</span><span>Generate &amp; Send Invoice</span>`;
+      }, 4000);
+    }, 1100);
+  }
+
+  function switchView(step) {
+    console.log("Switching wizard view step:", step);
+  }
+</script></main></div></body></html>

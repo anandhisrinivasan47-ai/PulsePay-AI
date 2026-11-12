@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Freelancer Payment Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="main-header">
+
+        <h1>AI Freelancer Payment Assistant</h1>
+
+        <p>Manage invoices, track payments and predict client payment behaviour.</p>
+
+        <a href="#dashboard" class="get-started">
+            Get Started
+        </a>
+
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="main-navigation">
+
+        <a href="#dashboard">Dashboard</a>
+        <a href="#ai-insights">AI Insights</a>
+        <a href="#create-invoice">Create Invoice</a>
+        <a href="#invoices">My Invoices</a>
+        <a href="#payment-history">Payment History</a>
+
+    </nav>
+
+    <main>
+
+        <!-- DASHBOARD -->
+        <section id="dashboard">
+
+            <h2>My Dashboard</h2>
+
+            <div class="dashboard">
+
+                <div class="card">
+                    <h3>Total Invoices</h3>
+                    <h2 id="totalInvoices">0</h2>
+                </div>
+
+                <div class="card">
+                    <h3>Paid Invoices</h3>
+                    <h2 id="paidInvoices">0</h2>
+                </div>
+
+                <div class="card">
+                    <h3>Pending Payments</h3>
+                    <h2 id="pendingInvoices">0</h2>
+                </div>
+
+                <div class="card">
+                    <h3>Total Revenue</h3>
+                    <h2>₹<span id="totalRevenue">0</span></h2>
+                </div>
+
+                <div class="card">
+                    <h3>Received Amount</h3>
+                    <h2>₹<span id="receivedRevenue">0</span></h2>
+                </div>
+
+                <div class="card">
+                    <h3>Pending Amount</h3>
+                    <h2>₹<span id="pendingRevenue">0</span></h2>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- AI PAYMENT INSIGHTS -->
+        <section id="ai-insights">
+
+            <h2>AI Payment Insights</h2>
+
+            <div id="aiInsights" class="ai-insights">
+
+                <p>
+                    Select Analyze Payment or Predict Payment
+                    from an invoice to view AI insights here.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- CREATE INVOICE -->
+        <section id="create-invoice">
+
+            <h2>Create New Invoice</h2>
+
+            <div class="invoice-form">
+
+                <label for="clientName">Client Name</label>
+
+                <input
+                    type="text"
+                    id="clientName"
+                    placeholder="Enter client name"
+                    required
+                >
+
+                <label for="service">Service Description</label>
+
+                <input
+                    type="text"
+                    id="service"
+                    placeholder="Enter service description"
+                    required
+                >
+
+                <label for="amount">Invoice Amount (₹)</label>
+
+                <input
+                    type="number"
+                    id="amount"
+                    placeholder="Enter amount"
+                    min="0.01"
+                    step="0.01"
+                    required
+                >
+
+                <label for="invoiceDate">Invoice Date</label>
+
+                <input
+                    type="date"
+                    id="invoiceDate"
+                    required
+                >
+
+                <label for="dueDate">Payment Due Date</label>
+
+                <input
+                    type="date"
+                    id="dueDate"
+                    required
+                >
+
+                <button
+                    type="button"
+                    onclick="createInvoice()"
+                >
+                    Create Invoice
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- CLIENT PAYMENT HISTORY -->
+        <section id="payment-history">
+
+            <h2>Client Payment History</h2>
+
+            <p>
+                View individual client payment records,
+                payment reliability and received amounts.
+            </p>
+
+            <div id="paymentHistory">
+
+                <p>
+                    Select View Payment History from an invoice
+                    to see client details.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- INVOICE MANAGEMENT -->
+        <section id="invoices">
+
+            <h2>My Recent Invoices</h2>
+
+            <div class="invoice-actions">
+
+                <button
+                    type="button"
+                    onclick="deleteAllInvoices()"
+                >
+                    Delete All Invoices
+                </button>
+
+                <button
+                    type="button"
+                    onclick="deleteSelectedInvoices()"
+                >
+                    Delete Selected
+                </button>
+
+            </div>
+
+            <input
+                type="text"
+                id="searchInvoice"
+                placeholder="Search by client, service or invoice ID..."
+                oninput="searchInvoices()"
+            >
+
+            <div id="invoiceList"></div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            AI Freelancer Payment Assistant |
+            Smart Invoice & Payment Management
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

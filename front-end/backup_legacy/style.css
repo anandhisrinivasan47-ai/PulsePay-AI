@@ -1,0 +1,380 @@
+
+/* ==========================================
+   AI FREELANCER PAYMENT ASSISTANT
+   PROFESSIONAL FINTECH THEME
+   MIDNIGHT NAVY + TEAL
+========================================== */
+
+/* GLOBAL SETTINGS */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #F4F7FA;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #243B53;
+    line-height: 1.6;
+}
+
+/* HEADER */
+
+.main-header {
+    background: linear-gradient(135deg, #14243A, #1B2F46);
+    color: white;
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.main-header h1 {
+    font-size: 36px;
+    margin-bottom: 12px;
+    color: white;
+}
+
+.main-header p {
+    color: #D5E1EC;
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+
+.get-started {
+    display: inline-block;
+    background: #0D9488;
+    color: white;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.get-started:hover {
+    background: #0F766E;
+    transform: translateY(-2px);
+}
+
+/* NAVIGATION */
+
+.main-navigation {
+    background: white;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 35px;
+    padding: 18px;
+    box-shadow: 0 3px 12px rgba(20, 36, 58, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.main-navigation a {
+    text-decoration: none;
+    color: #14243A;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.main-navigation a:hover {
+    color: #0D9488;
+}
+
+/* MAIN CONTENT */
+
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 35px 25px;
+}
+
+section {
+    margin-bottom: 55px;
+    scroll-margin-top: 85px;
+}
+
+section > h2 {
+    font-size: 27px;
+    color: #14243A;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* PARAGRAPHS */
+
+p {
+    color: #526477;
+    font-size: 15px;
+}
+
+/* DASHBOARD */
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    margin-top: 25px;
+}
+
+/* CARDS */
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(20, 36, 58, 0.07);
+    border: 1px solid #E2E8F0;
+    transition: transform 0.25s, box-shadow 0.25s;
+    margin-bottom: 20px;
+}
+
+.dashboard .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(20, 36, 58, 0.12);
+}
+
+.card h3 {
+    color: #0D9488;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.card h2 {
+    color: #14243A;
+    font-size: 29px;
+}
+
+/* BUTTONS */
+
+button {
+    background: #0D9488;
+    color: white;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 6px 4px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0F766E;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background: #94A3B8;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* INVOICE FORM */
+
+.invoice-form {
+    background: white;
+    max-width: 550px;
+    margin: 25px 0;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(20, 36, 58, 0.07);
+    border: 1px solid #E2E8F0;
+    text-align: left;
+}
+
+.invoice-form label {
+    display: block;
+    color: #243B53;
+    font-weight: bold;
+    margin-top: 14px;
+}
+
+.invoice-form input {
+    width: 100%;
+    padding: 13px;
+    margin: 8px 0;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    background: #FFFFFF;
+}
+
+.invoice-form input:focus,
+#searchInvoice:focus {
+    border-color: #0D9488;
+    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.12);
+}
+
+.invoice-form button {
+    width: 100%;
+    margin: 20px 0 0;
+    padding: 14px;
+}
+
+/* INVOICE ACTIONS */
+
+.invoice-actions {
+    margin-bottom: 15px;
+}
+
+/* SEARCH */
+
+#searchInvoice {
+    width: 100%;
+    max-width: 450px;
+    padding: 13px;
+    margin: 15px 0 25px;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    background: white;
+}
+
+/* INVOICE LIST */
+
+#invoiceList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+#invoiceList .card {
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+#invoiceList .card h3 {
+    color: #14243A;
+    font-size: 21px;
+    margin: 15px 0;
+}
+
+#invoiceList .card p {
+    margin: 9px 0;
+    font-size: 14px;
+}
+
+#invoiceList input[type="checkbox"] {
+    accent-color: #0D9488;
+    margin-right: 6px;
+}
+
+/* PAYMENT HISTORY */
+
+#paymentHistory {
+    margin-top: 20px;
+}
+
+#paymentHistory .card {
+    max-width: 650px;
+    text-align: left;
+    border-left: 5px solid #0D9488;
+}
+
+#paymentHistory .card h2 {
+    color: #14243A;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+#paymentHistory .card h3 {
+    color: #0D9488;
+    margin-bottom: 15px;
+}
+
+#paymentHistory .card p {
+    padding: 10px 0;
+    border-bottom: 1px solid #E2E8F0;
+    font-size: 15px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #14243A;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+footer p {
+    color: #D5E1EC;
+    font-size: 14px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+
+    .main-header {
+        padding: 40px 15px;
+    }
+
+    .main-header h1 {
+        font-size: 27px;
+    }
+
+    .main-navigation {
+        gap: 15px;
+    }
+
+    .main-navigation a {
+        font-size: 13px;
+    }
+
+    main {
+        padding: 25px 15px;
+    }
+
+    section > h2 {
+        font-size: 23px;
+    }
+
+    .dashboard {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .dashboard .card {
+        padding: 16px;
+    }
+
+    .dashboard .card h2 {
+        font-size: 22px;
+    }
+
+    .invoice-form {
+        padding: 20px;
+    }
+
+    #invoiceList {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .main-header h1 {
+        font-size: 23px;
+    }
+
+    .main-navigation {
+        gap: 10px;
+    }
+
+    .main-navigation a {
+        font-size: 12px;
+    }
+}

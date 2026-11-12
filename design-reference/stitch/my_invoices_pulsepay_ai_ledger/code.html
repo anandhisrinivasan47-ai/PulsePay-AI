@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Space+Grotesk:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary-fixed-dim":"#c3c0ff","surface-variant":"#dae2fd","tertiary-fixed-dim":"#4edea3","surface-container-highest":"#dae2fd","on-primary-fixed":"#100069","on-secondary":"#ffffff","on-error-container":"#93000a","on-tertiary-fixed":"#002113","on-secondary-fixed-variant":"#004e5c","surface-container-lowest":"#ffffff","on-tertiary-fixed-variant":"#005236","inverse-surface":"#283044","on-tertiary":"#ffffff","surface-bright":"#faf8ff","inverse-primary":"#c3c0ff","on-secondary-fixed":"#001f26","surface":"#faf8ff","on-surface-variant":"#464554","on-secondary-container":"#006172","on-primary":"#ffffff","surface-dim":"#d2d9f4","surface-container":"#eaedff","secondary-fixed":"#acedff","on-error":"#ffffff","outline":"#777586","secondary-container":"#57dffe","error-container":"#ffdad6","secondary":"#00687a","on-tertiary-container":"#4ddda2","tertiary-container":"#005e3f","background":"#faf8ff","on-background":"#131b2e","tertiary":"#00442d","primary":"#2a14b4","surface-container-high":"#e2e7ff","on-surface":"#131b2e","error":"#ba1a1a","secondary-fixed-dim":"#4cd7f6","inverse-on-surface":"#eef0ff","on-primary-fixed-variant":"#372abf","primary-fixed":"#e3dfff","outline-variant":"#c7c4d7","surface-tint":"#5148d7","surface-container-low":"#f2f3ff","on-primary-container":"#c1beff","tertiary-fixed":"#6ffbbe","primary-container":"#4338ca"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"gutter-lg":"1.5rem",gutter:"1rem","margin-lg":"2.5rem","margin-md":"1.5rem","space-sm":"0.5rem","space-lg":"1.25rem",margin:"1rem","space-md":"0.75rem","space-xs":"0.25rem","space-xl":"2rem"},fontFamily:{"label-sm":["Geist"],"display-lg":["Space Grotesk"],"display-sm":["Space Grotesk"],"mono-metric":["Geist"],"label-md":["Geist"],"body-sm":["Geist"],"headline-lg":["Space Grotesk"],"body-md":["Geist"],"body-lg":["Geist"],"headline-sm":["Space Grotesk"]},fontSize:{"label-sm":["0.6875rem",{lineHeight:"0.875rem",letterSpacing:"0.06em",fontWeight:"600"}],"display-lg":["3.5rem",{lineHeight:"3.75rem",letterSpacing:"-0.04em",fontWeight:"700"}],"display-sm":["2.25rem",{lineHeight:"2.5rem",letterSpacing:"-0.03em",fontWeight:"600"}],"mono-metric":["1.5rem",{lineHeight:"1.75rem",letterSpacing:"-0.02em",fontWeight:"600"}],"label-md":["0.875rem",{lineHeight:"1.25rem",letterSpacing:"0.01em",fontWeight:"500"}],"body-sm":["0.75rem",{lineHeight:"1.125rem",letterSpacing:"0em",fontWeight:"400"}],"headline-lg":["1.75rem",{lineHeight:"2.25rem",letterSpacing:"-0.02em",fontWeight:"600"}],"body-md":["0.875rem",{lineHeight:"1.375rem",letterSpacing:"-0.005em",fontWeight:"400"}],"body-lg":["1.125rem",{lineHeight:"1.75rem",letterSpacing:"-0.01em",fontWeight:"400"}],"headline-sm":["1.25rem",{lineHeight:"1.75rem",letterSpacing:"-0.01em",fontWeight:"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between bg-surface-container-lowest"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[20px]">bolt</span></div><span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface">PulsePay</span></div><span class="px-space-xs py-0.5 rounded text-[10px] font-label-sm font-semibold tracking-wider bg-surface-container-high text-primary uppercase">v2.5</span></div><div class="px-space-lg pt-space-xs pb-space-sm"><span class="text-[10px] font-label-sm tracking-wider uppercase text-on-surface-variant font-semibold">Freelance OS Console</span></div><nav class="flex flex-col gap-1 px-space-md" data-active-classes="bg-primary-container text-on-primary font-medium shadow-sm"><a class="group flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="overview" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-md text-label-md">Overview</span></div></a><a aria-current="page" class="group flex items-center justify-between px-space-md py-2.5 rounded-lg transition-all bg-primary-container text-on-primary font-medium shadow-sm" data-path="my-invoices" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span class="font-label-md text-label-md">My Invoices</span></div><span class="px-2 py-0.5 rounded text-[11px] font-label-sm font-semibold bg-surface-container-highest text-on-surface">18</span></a><a class="group flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="create-invoice" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">add_circle</span><span class="font-label-md text-label-md">Create Invoice</span></div></a><a class="group flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="ai-payment-insights" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">auto_awesome</span><span class="font-label-md text-label-md">AI Payment Insights</span></div><span class="px-1.5 py-0.5 rounded text-[10px] font-label-sm font-semibold bg-primary-fixed text-on-primary-fixed uppercase">AI</span></a><a class="group flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="client-payment-history" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">history_toggle_off</span><span class="font-label-md text-label-md">Client History</span></div></a><a class="group flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="payment-follow-ups" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">outgoing_mail</span><span class="font-label-md text-label-md">Follow-ups</span></div></a><a class="group flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="paypal-payments" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">payments</span><span class="font-label-md text-label-md">PayPal Payments</span></div><span class="px-1.5 py-0.5 rounded text-[10px] font-label-sm font-semibold bg-secondary-fixed text-on-secondary-fixed uppercase">Sandbox</span></a><a class="group flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="settings" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">tune</span><span class="font-label-md text-label-md">Settings</span></div></a></nav></div><div class="p-space-md flex flex-col gap-space-sm bg-surface-container-lowest"><div class="flex items-center justify-between px-space-sm py-1.5 rounded-lg bg-surface-container-low"><div class="flex items-center gap-space-sm"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim inline-block"></span><span class="font-label-sm text-[11px] text-on-surface-variant font-mono">127.0.0.1:8001</span></div><span class="text-[10px] font-label-sm text-tertiary uppercase font-semibold">Live</span></div><div class="flex items-center gap-space-md px-space-sm py-space-xs"><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col min-w-0 flex-1"><span class="font-label-md text-label-md font-semibold text-on-surface truncate">Alex Rivers</span><span class="font-body-sm text-[11px] text-on-surface-variant truncate">Freelance Pro Tier</span></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40"><div class="w-full h-full px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-0"><nav class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm"><span class="hover:text-on-surface cursor-pointer">Home</span><span class="text-outline-variant text-[14px]">/</span><span class="hover:text-on-surface cursor-pointer">Payment Command Center</span><span class="text-outline-variant text-[14px]">/</span><span class="text-on-surface font-semibold">My Invoices</span></nav><div class="hidden xl:flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[11px] font-label-sm font-semibold uppercase"><span class="w-1.5 h-1.5 rounded-full bg-secondary inline-block"></span><span>Sandbox Live</span></div></div><div class="flex items-center gap-space-md flex-1 max-w-lg justify-end"><div class="relative w-full max-w-xs md:max-w-sm"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span><input class="w-full h-9 pl-9 pr-12 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline text-body-sm font-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary transition-all" placeholder="Search invoices, clients, IDs..." type="text"/><kbd class="absolute right-2.5 top-1/2 -translate-y-1/2 px-1.5 py-0.5 text-[10px] font-mono-metric font-semibold text-on-surface-variant bg-surface-container-high rounded">⌘K</kbd></div><div class="flex items-center gap-1"><button class="w-9 h-9 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">refresh</span></button><button class="w-9 h-9 flex items-center justify-center rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors relative" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="w-2 h-2 rounded-full bg-error absolute top-2 right-2"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-1"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="relative pt-16 w-full min-h-screen bg-surface px-space-lg py-space-lg"><div class="flex flex-col w-full gap-space-lg">
+<!-- TOP CONTEXT BANNER & PRIMARY ACTIONS -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-label-sm font-semibold tracking-wider uppercase bg-primary-fixed text-on-primary-fixed">
+          SETTLEMENT ENGINE
+        </span>
+<span class="text-on-surface-variant text-[11px] font-mono-metric font-medium">
+          / Q2 Automated Sync & Ledger
+        </span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim inline-block animate-pulse"></span>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight mt-0.5">
+        Invoice Ledger & Receivables
+      </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-3xl">
+        Autonomous tracking, algorithmic payment health, and PayPal sandbox gateway settlements for high-velocity freelance contracts.
+      </p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap shrink-0">
+<button class="h-9 px-3.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container-low text-on-surface font-label-md text-label-md flex items-center gap-2 transition-all shadow-sm" onclick="testPayPalConnection()" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">sync_alt</span>
+<span>Gateway Sync</span>
+</button>
+<button class="h-9 px-3.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container-low text-on-surface font-label-md text-label-md flex items-center gap-2 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">download</span>
+<span>Export Ledger (CSV)</span>
+</button>
+<button class="h-9 px-3.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container-low text-on-surface font-label-md text-label-md flex items-center gap-2 transition-all shadow-sm relative" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">forward_to_inbox</span>
+<span>Bulk PayPal Reminder</span>
+<span class="px-1.5 py-0.2 rounded-full text-[10px] font-label-sm font-bold bg-error-container text-on-error-container">3</span>
+</button>
+<button class="h-9 px-4 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md flex items-center gap-2 transition-all shadow-sm" onclick="createInvoice()" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Create New Invoice</span>
+</button>
+</div>
+</div>
+<!-- FOUR RECEIVABLES METRIC SUMMARY CARDS -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- CARD 1: TOTAL RECEIVABLES -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Receivables (Q2)</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-display-sm text-display-sm font-bold text-on-surface" id="totalRevenue">₹8,45,000</span>
+</div>
+</div>
+<div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+</div>
+<div class="mt-3 flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-[11px] font-body-sm">
+<span class="text-tertiary font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +18.4% vs Q1
+          </span>
+<span class="text-on-surface-variant font-mono-metric" id="totalInvoices">28 Invoices</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 78%;"></div>
+</div>
+</div>
+</div>
+<!-- CARD 2: CLEARED VIA PAYPAL -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Cleared via PayPal</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-display-sm text-display-sm font-bold text-on-surface" id="receivedRevenue">₹5,62,500</span>
+</div>
+</div>
+<div class="w-9 h-9 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+</div>
+<div class="mt-3 flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-[11px] font-body-sm">
+<span class="text-on-surface font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary-container inline-block"></span> 66.5% Conversion
+          </span>
+<span class="text-on-surface-variant font-mono-metric" id="paidInvoices">16 Settled</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-container rounded-full" style="width: 66.5%;"></div>
+</div>
+</div>
+</div>
+<!-- CARD 3: PENDING DISBURSEMENT -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Pending Disbursement</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-display-sm text-display-sm font-bold text-on-surface" id="pendingRevenue">₹1,87,500</span>
+</div>
+</div>
+<div class="w-9 h-9 rounded-lg bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[20px]">hourglass_top</span>
+</div>
+</div>
+<div class="mt-3 flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-[11px] font-body-sm">
+<span class="text-secondary font-semibold">Avg 3.8 days to payout</span>
+<span class="text-on-surface-variant font-mono-metric" id="pendingInvoices">8 Awaiting</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full" style="width: 22.1%;"></div>
+</div>
+</div>
+</div>
+<!-- CARD 4: RISK / OVERDUE EXPOSURE -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md flex flex-col justify-between shadow-sm relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Risk / Overdue Exposure</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-display-sm text-display-sm font-bold text-error">₹95,000</span>
+</div>
+</div>
+<div class="w-9 h-9 rounded-lg bg-error-container flex items-center justify-center text-on-error-container">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</div>
+</div>
+<div class="mt-3 flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-[11px] font-body-sm">
+<span class="text-error font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-error inline-block animate-ping"></span> High AI Escalate Priority
+          </span>
+<span class="text-on-surface-variant font-mono-metric" id="overdueInvoices">4 Flagged</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-error rounded-full" style="width: 11.2%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- FILTER, SEARCH & VIEW CONTROLS BAR -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<!-- Search Input -->
+<div class="relative flex-1 max-w-lg">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full h-9 pl-9 pr-4 rounded-lg bg-surface-container-low text-on-surface placeholder:text-outline text-body-sm font-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary transition-all" id="searchInvoice" placeholder="Search by invoice #, client name, service tag..." type="text"/>
+</div>
+<!-- Quick Filter Pills -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0">
+<button class="h-8 px-3 rounded-lg text-label-sm font-label-sm bg-primary-container text-on-primary font-semibold flex items-center gap-1.5 whitespace-nowrap shadow-xs" onclick="filterInvoicesByStatus('all')" type="button">
+<span>All</span>
+<span class="px-1.5 py-0.2 rounded-full text-[10px] bg-primary text-on-primary">28</span>
+</button>
+<button class="h-8 px-3 rounded-lg text-label-sm font-label-sm bg-surface-container-high text-on-surface hover:bg-surface-variant font-medium flex items-center gap-1.5 whitespace-nowrap transition-colors" onclick="filterInvoicesByStatus('paid')" type="button">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<span>Paid</span>
+<span class="px-1.5 py-0.2 rounded-full text-[10px] bg-surface-container-lowest text-on-surface-variant">16</span>
+</button>
+<button class="h-8 px-3 rounded-lg text-label-sm font-label-sm bg-surface-container-high text-on-surface hover:bg-surface-variant font-medium flex items-center gap-1.5 whitespace-nowrap transition-colors" onclick="filterInvoicesByStatus('pending')" type="button">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Pending</span>
+<span class="px-1.5 py-0.2 rounded-full text-[10px] bg-surface-container-lowest text-on-surface-variant">8</span>
+</button>
+<button class="h-8 px-3 rounded-lg text-label-sm font-label-sm bg-surface-container-high text-on-surface hover:bg-surface-variant font-medium flex items-center gap-1.5 whitespace-nowrap transition-colors" onclick="filterInvoicesByStatus('overdue')" type="button">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span>Overdue</span>
+<span class="px-1.5 py-0.2 rounded-full text-[10px] bg-error-container text-on-error-container">4</span>
+</button>
+<button class="h-8 px-3 rounded-lg text-label-sm font-label-sm bg-surface-container-high text-on-surface hover:bg-surface-variant font-medium flex items-center gap-1.5 whitespace-nowrap transition-colors" onclick="filterInvoicesByStatus('draft')" type="button">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span>Draft</span>
+<span class="px-1.5 py-0.2 rounded-full text-[10px] bg-surface-container-lowest text-on-surface-variant">2</span>
+</button>
+</div>
+</div>
+<!-- Secondary Meta Controls -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-2 bg-surface-container-lowest">
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="flex items-center gap-1.5 bg-surface-container-low px-2.5 py-1 rounded-lg">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">calendar_month</span>
+<select class="bg-transparent text-label-sm font-label-sm text-on-surface focus:outline-none cursor-pointer">
+<option>This Quarter: Q2 2024</option>
+<option>Q1 2024</option>
+<option>Full Year 2024</option>
+</select>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container-low px-2.5 py-1 rounded-lg">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">group</span>
+<select class="bg-transparent text-label-sm font-label-sm text-on-surface focus:outline-none cursor-pointer">
+<option>All Clients (12)</option>
+<option>Hyperion Global</option>
+<option>Nexus Labs Inc.</option>
+<option>Horizon Media Ltd.</option>
+<option>Acme Corp</option>
+</select>
+</div>
+<div class="hidden md:flex items-center gap-1.5 px-2 py-1 rounded bg-surface-container-high text-on-surface-variant text-[11px] font-mono-metric">
+<span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>
+<span>Auto-categorization active via PayPal Webhooks</span>
+</div>
+</div>
+<!-- View Switcher -->
+<div class="flex items-center gap-1 bg-surface-container-low p-0.5 rounded-lg">
+<button class="w-7 h-7 flex items-center justify-center rounded bg-surface-container-lowest text-primary shadow-xs" onclick="switchView('split')" title="Split View" type="button">
+<span class="material-symbols-outlined text-[16px]">vertical_split</span>
+</button>
+<button class="w-7 h-7 flex items-center justify-center rounded text-on-surface-variant hover:text-on-surface" onclick="switchView('full')" title="Table View" type="button">
+<span class="material-symbols-outlined text-[16px]">view_agenda</span>
+</button>
+</div>
+</div>
+</div>
+<!-- MAIN SPLIT PANE CONTENT AREA -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT PANE: INVOICE LEDGER TABLE (8 COLUMNS ON XL) -->
+<div class="xl:col-span-8 bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col" id="invoiceList">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-3 w-8">
+<input class="rounded text-primary focus:ring-primary h-4 w-4 bg-surface-container-lowest" type="checkbox"/>
+</th>
+<th class="py-3 px-3">Invoice ID</th>
+<th class="py-3 px-3">Client</th>
+<th class="py-3 px-3 hidden md:table-cell">Service Description</th>
+<th class="py-3 px-3">Amount (₹)</th>
+<th class="py-3 px-3">Due Date</th>
+<th class="py-3 px-3">Status</th>
+<th class="py-3 px-3 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="text-body-sm font-body-sm divide-y-0">
+<!-- ROW 1 (SELECTED / ACTIVE ROW) -->
+<tr class="bg-surface-container-high/60 hover:bg-surface-container-high transition-colors cursor-pointer" onclick="selectInvoice('INV-2024-003')">
+<td class="py-3 px-3">
+<input checked="" class="rounded text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+</td>
+<td class="py-3 px-3 font-mono-metric text-on-surface font-semibold">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+<span>#INV-2024-003</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded bg-primary-fixed text-on-primary-fixed font-bold text-[11px] flex items-center justify-center shrink-0">
+                    HG
+                  </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Hyperion Global</span>
+<span class="text-[11px] text-on-surface-variant truncate">San Francisco, CA • Active Escalation</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 hidden md:table-cell text-on-surface-variant truncate max-w-xs">
+                UI/UX Design System
+              </td>
+<td class="py-3 px-3 font-mono-metric font-bold text-on-surface">
+                ₹95,000
+              </td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">Oct 18, 2024</span>
+<span class="text-[11px] font-semibold text-error">12 Days Overdue</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-label-sm font-bold uppercase bg-error-container text-on-error-container">
+<span class="w-1.5 h-1.5 rounded-full bg-error inline-block"></span>
+                  OVERDUE
+                </span>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="h-7 px-2 rounded bg-surface-container-highest text-primary hover:bg-primary-fixed transition-colors flex items-center gap-1 text-[11px] font-semibold" onclick="event.stopPropagation(); analyzeInvoice('INV-2024-003')" title="Run AI Insight" type="button">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+<span>Analyze</span>
+</button>
+<button class="h-7 px-2 rounded bg-primary-container text-on-primary hover:bg-primary transition-colors flex items-center gap-1 text-[11px] font-semibold" onclick="event.stopPropagation(); payWithPayPal('INV-2024-003', 95000)" title="Instant Follow-up" type="button">
+<span class="material-symbols-outlined text-[14px]">send</span>
+<span>Follow-up</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 2 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer" onclick="selectInvoice('INV-2024-002')">
+<td class="py-3 px-3">
+<input class="rounded text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+</td>
+<td class="py-3 px-3 font-mono-metric text-on-surface font-medium">
+                #INV-2024-002
+              </td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded bg-secondary-fixed text-on-secondary-fixed font-bold text-[11px] flex items-center justify-center shrink-0">
+                    NL
+                  </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Nexus Labs Inc.</span>
+<span class="text-[11px] text-on-surface-variant truncate">Singapore</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 hidden md:table-cell text-on-surface-variant truncate max-w-xs">
+                AI Integration & API
+              </td>
+<td class="py-3 px-3 font-mono-metric font-bold text-on-surface">
+                ₹1,85,000
+              </td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">Nov 02, 2024</span>
+<span class="text-[11px] font-semibold text-secondary">Due in 3 days</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-label-sm font-bold uppercase bg-surface-container-high text-on-surface">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary inline-block"></span>
+                  PENDING
+                </span>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="h-7 px-2 rounded bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1 text-[11px]" onclick="event.stopPropagation(); analyzeInvoice('INV-2024-002')" type="button">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+<span>Analyze</span>
+</button>
+<button class="h-7 px-2 rounded bg-surface-container-high text-on-surface hover:bg-surface-variant transition-colors flex items-center gap-1 text-[11px]" onclick="event.stopPropagation();" type="button">
+<span>Remind</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 3 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer" onclick="selectInvoice('INV-2024-004')">
+<td class="py-3 px-3">
+<input class="rounded text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+</td>
+<td class="py-3 px-3 font-mono-metric text-on-surface font-medium">
+                #INV-2024-004
+              </td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded bg-surface-container-highest text-on-surface font-bold text-[11px] flex items-center justify-center shrink-0">
+                    HM
+                  </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Horizon Media Ltd.</span>
+<span class="text-[11px] text-on-surface-variant truncate">London, UK</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 hidden md:table-cell text-on-surface-variant truncate max-w-xs">
+                Fullstack MVP Web App
+              </td>
+<td class="py-3 px-3 font-mono-metric font-bold text-on-surface">
+                ₹2,40,000
+              </td>
+<td class="py-3 px-3">
+<span class="text-on-surface font-medium">Nov 15, 2024</span>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-label-sm font-bold uppercase bg-surface-container-high text-on-surface">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary inline-block"></span>
+                  PENDING
+                </span>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="h-7 px-2 rounded bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1 text-[11px]" onclick="event.stopPropagation(); analyzeInvoice('INV-2024-004')" type="button">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+<span>Analyze</span>
+</button>
+<button class="h-7 px-2 rounded bg-surface-container-high text-primary hover:bg-primary-fixed transition-colors flex items-center gap-1 text-[11px] font-semibold" onclick="event.stopPropagation(); payWithPayPal('INV-2024-004', 240000)" type="button">
+<span>Pay</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 4 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer" onclick="selectInvoice('INV-2024-001')">
+<td class="py-3 px-3">
+<input class="rounded text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+</td>
+<td class="py-3 px-3 font-mono-metric text-on-surface font-medium">
+                #INV-2024-001
+              </td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded bg-tertiary-fixed text-on-tertiary-fixed font-bold text-[11px] flex items-center justify-center shrink-0">
+                    AC
+                  </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Acme Corp</span>
+<span class="text-[11px] text-on-surface-variant truncate">New York, NY</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 hidden md:table-cell text-on-surface-variant truncate max-w-xs">
+                Cloud Architecture & DevOps
+              </td>
+<td class="py-3 px-3 font-mono-metric font-bold text-on-surface">
+                ₹1,20,000
+              </td>
+<td class="py-3 px-3">
+<span class="text-on-surface font-medium">Oct 24, 2024</span>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-label-sm font-bold uppercase bg-surface-container-low text-tertiary">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim inline-block"></span>
+                  PAID
+                </span>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="h-7 px-2 rounded bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1 text-[11px]" onclick="event.stopPropagation(); analyzeInvoice('INV-2024-001')" type="button">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+<span>Analyze</span>
+</button>
+<button class="h-7 px-2 rounded bg-surface-container-high text-on-surface hover:bg-surface-variant transition-colors flex items-center gap-1 text-[11px]" onclick="event.stopPropagation();" type="button">
+<span>View</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 5 -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer" onclick="selectInvoice('INV-2024-005')">
+<td class="py-3 px-3">
+<input class="rounded text-primary focus:ring-primary h-4 w-4" type="checkbox"/>
+</td>
+<td class="py-3 px-3 font-mono-metric text-on-surface font-medium">
+                #INV-2024-005
+              </td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded bg-tertiary-fixed text-on-tertiary-fixed font-bold text-[11px] flex items-center justify-center shrink-0">
+                    SL
+                  </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Solaria Labs</span>
+<span class="text-[11px] text-on-surface-variant truncate">Berlin, DE</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3 hidden md:table-cell text-on-surface-variant truncate max-w-xs">
+                DevOps & CI/CD Pipeline
+              </td>
+<td class="py-3 px-3 font-mono-metric font-bold text-on-surface">
+                ₹80,000
+              </td>
+<td class="py-3 px-3">
+<span class="text-on-surface font-medium">Oct 12, 2024</span>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-label-sm font-bold uppercase bg-surface-container-low text-tertiary">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim inline-block"></span>
+                  PAID
+                </span>
+</td>
+<td class="py-3 px-3 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="h-7 px-2 rounded bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1 text-[11px]" onclick="event.stopPropagation(); analyzeInvoice('INV-2024-005')" type="button">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+<span>Analyze</span>
+</button>
+<button class="h-7 px-2 rounded bg-surface-container-high text-on-surface hover:bg-surface-variant transition-colors flex items-center gap-1 text-[11px]" onclick="event.stopPropagation();" type="button">
+<span>Receipt</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- TABLE FOOTER & PAGINATION -->
+<div class="p-space-md bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md text-[12px] font-body-sm text-on-surface-variant">
+<span>Showing 1-5 of 28 entries</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant inline-block"></span>
+<span class="font-mono-metric font-semibold text-on-surface">Selected page total: ₹7,20,000</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-high flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-primary-container text-on-primary font-semibold text-[12px]" type="button">1</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container-high text-[12px]" type="button">2</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container-high text-[12px]" type="button">3</button>
+<span class="px-1 text-on-surface-variant text-[12px]">...</span>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container-high text-[12px]" type="button">6</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-high flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- RIGHT PANE: DEDICATED INVOICE INSPECTOR / SLIDE-OVER DRAWER (4 COLUMNS ON XL) -->
+<div class="xl:col-span-4 bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-md relative overflow-hidden">
+<!-- INSPECTOR HEADER -->
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">priority_high</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Invoice Details</h3>
+<span class="font-mono-metric text-[12px] text-on-surface-variant">#INV-2024-003</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant transition-colors" title="Print PDF" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant transition-colors" title="Minimize / Close" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- GATEWAY STATUS BANNER -->
+<div class="rounded-xl bg-error-container/40 p-space-md flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+<span class="font-label-sm text-label-sm font-bold text-error uppercase tracking-wider">12 Days Past Due</span>
+</div>
+<span class="font-body-sm text-[11px] text-on-surface-variant mt-0.5">Last opened 4 hrs ago by client</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase">Total Due</span>
+<div class="font-display-sm text-headline-lg font-bold text-error">₹95,000</div>
+</div>
+</div>
+<!-- CLIENT ACCOUNT DETAILS -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Client Profile</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-label-sm font-bold bg-primary-fixed text-on-primary-fixed uppercase">High Value Tier</span>
+</div>
+<div class="flex items-center gap-space-sm pt-1">
+<div class="w-10 h-10 rounded-lg bg-primary text-on-primary font-bold text-headline-sm flex items-center justify-center shrink-0">
+            HG
+          </div>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-label-md text-label-md font-bold text-on-surface truncate">Hyperion Global Inc.</span>
+<span class="text-[12px] text-on-surface-variant font-mono-metric truncate">billing@hyperionglobal.io</span>
+<span class="text-[11px] text-outline truncate">Tax ID: US-EIN-94821034</span>
+</div>
+</div>
+</div>
+<!-- ITEMIZED SCOPE BREAKDOWN -->
+<div class="flex flex-col gap-2">
+<span class="text-[10px] font-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Scope & Deliverables</span>
+<div class="flex flex-col gap-1.5 bg-surface-container-lowest">
+<div class="flex items-start justify-between text-body-sm py-1">
+<div class="flex flex-col max-w-[70%]">
+<span class="font-medium text-on-surface">Core Brand System & Design Tokens</span>
+<span class="text-[11px] text-on-surface-variant">Figma delivery, SVG library</span>
+</div>
+<span class="font-mono-metric font-semibold text-on-surface">₹40,000</span>
+</div>
+<div class="flex items-start justify-between text-body-sm py-1">
+<div class="flex flex-col max-w-[70%]">
+<span class="font-medium text-on-surface">Design System Component Guidelines</span>
+<span class="text-[11px] text-on-surface-variant">React specs & accessible docs</span>
+</div>
+<span class="font-mono-metric font-semibold text-on-surface">₹55,000</span>
+</div>
+</div>
+<div class="pt-2 bg-surface-container-low rounded-lg p-2.5 flex flex-col gap-1 text-[11px] font-body-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Subtotal</span>
+<span class="font-mono-metric">₹95,000</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Tax (0% Reverse Charge)</span>
+<span class="font-mono-metric">₹0.00</span>
+</div>
+<div class="flex justify-between font-bold text-on-surface text-[12px] pt-1">
+<span>Total Outstanding</span>
+<span class="font-mono-metric text-error">₹95,000</span>
+</div>
+</div>
+</div>
+<!-- PAYPAL SANDBOX SETTLEMENT LINK -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">PayPal Sandbox Checkout URL</span>
+<span class="text-[10px] text-secondary font-mono-metric">TLS 1.3 Verified</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-lg">
+<input class="bg-transparent text-[11px] font-mono-metric text-on-surface flex-1 px-2 focus:outline-none truncate" readonly="" type="text" value="https://sandbox.paypal.com/checkout/pay?inv=INV-2024-003"/>
+<button class="h-7 px-2.5 rounded bg-surface-container-lowest hover:bg-surface-container-high text-primary font-semibold text-[11px] transition-colors shadow-xs" onclick="navigator.clipboard && navigator.clipboard.writeText('https://sandbox.paypal.com/checkout/pay?inv=INV-2024-003')" type="button">
+            Copy
+          </button>
+</div>
+<span class="text-[10px] text-outline font-mono-metric">TX Ref: PAYID-MQ98317-ALPHA • 256-bit SSL Sandbox Node</span>
+</div>
+<!-- AUTONOMOUS ESCALATION LOG (PULSE AI) -->
+<div class="flex flex-col gap-2 pt-1">
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Pulse AI Escalation Timeline</span>
+<span class="flex items-center gap-1 text-[10px] text-primary font-semibold">
+<span class="material-symbols-outlined text-[12px]">neurology</span> 94% Risk Prob.
+          </span>
+</div>
+<div class="flex flex-col gap-2 relative pl-4 bg-surface-container-lowest">
+<div class="absolute left-1.5 top-1 bottom-1 w-0.5 bg-surface-container-high"></div>
+<!-- Step 1 -->
+<div class="relative flex flex-col gap-0.5">
+<div class="w-2.5 h-2.5 rounded-full bg-tertiary absolute -left-[14.5px] top-1"></div>
+<span class="font-label-sm text-[11px] font-semibold text-on-surface">Gentle Reminder Dispatched</span>
+<span class="text-[10px] text-on-surface-variant font-mono-metric">Oct 20 • Automated email via PayPal Sandbox API</span>
+</div>
+<!-- Step 2 -->
+<div class="relative flex flex-col gap-0.5">
+<div class="w-2.5 h-2.5 rounded-full bg-secondary absolute -left-[14.5px] top-1"></div>
+<span class="font-label-sm text-[11px] font-semibold text-on-surface">Firm Notice + Late Fee Advisory</span>
+<span class="text-[10px] text-on-surface-variant font-mono-metric">Oct 28 • Client opened invoice 4 times</span>
+</div>
+<!-- Step 3 (Pending) -->
+<div class="relative flex flex-col gap-0.5">
+<div class="w-2.5 h-2.5 rounded-full bg-error absolute -left-[14.5px] top-1 animate-pulse"></div>
+<span class="font-label-sm text-[11px] font-bold text-error">Next Scheduled Action: Tomorrow, 09:00 AM</span>
+<span class="text-[10px] text-on-surface-variant font-mono-metric">WhatsApp + Email Escalation to Finance Director</span>
+</div>
+</div>
+</div>
+<!-- BOTTOM ACTIONS -->
+<div class="flex items-center gap-2 pt-2 mt-auto">
+<button class="flex-1 h-10 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md font-bold flex items-center justify-center gap-2 transition-all shadow-sm" onclick="payWithPayPal('INV-2024-003', 95000)" type="button">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span>Trigger AI Chase Now</span>
+</button>
+<button class="w-10 h-10 rounded-lg bg-surface-container-low hover:bg-error-container hover:text-on-error-container text-on-surface-variant flex items-center justify-center transition-colors" title="Archive or Delete" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_outline</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Handlers required by integration hooks
+  function filterInvoicesByStatus(status) {
+    console.log("Filtering invoices by status:", status);
+    // UI reactive logic can toggle view
+  }
+
+  function switchView(viewMode) {
+    console.log("Switching view to:", viewMode);
+  }
+
+  function createInvoice() {
+    console.log("Triggering New Invoice Modal / Flow");
+    alert("PulsePay: Launching Quick Invoice Creation Engine");
+  }
+
+  function analyzeInvoice(invoiceId) {
+    console.log("Analyzing invoice:", invoiceId);
+    alert("Pulse AI: Telemetry calculated. Client payment velocity score: 72/100");
+  }
+
+  function payWithPayPal(invoiceId, amount) {
+    console.log("Dispatching PayPal Sandbox request for:", invoiceId, "Amount: ₹" + amount);
+    alert("Opening PayPal Sandbox Gateway for " + invoiceId + " [₹" + amount.toLocaleString('en-IN') + "]");
+  }
+
+  function testPayPalConnection() {
+    console.log("Ping PayPal Sandbox Node 127.0.0.1:8001");
+    alert("PayPal Sandbox Connection Verified: Node 127.0.0.1:8001 latency 24ms (TLS 1.3 Active)");
+  }
+
+  function selectInvoice(invoiceId) {
+    console.log("Selected invoice for inspection:", invoiceId);
+  }
+</script></main></div></body></html>

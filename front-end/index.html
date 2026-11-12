@@ -1,0 +1,1246 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#faf8ff"/>
+  <title>PulsePay AI — Freelance OS</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2a14b4",
+            "primary-container": "#4338ca",
+            "primary-fixed": "#e3dfff",
+            "primary-fixed-dim": "#5148d7",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#ffffff",
+            "on-primary-fixed": "#100069",
+            "on-primary-fixed-variant": "#372abf",
+            "secondary": "#00687a",
+            "secondary-container": "#d9f5f8",
+            "secondary-fixed": "#acedff",
+            "secondary-fixed-dim": "#4cd7f6",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#004e5c",
+            "on-secondary-fixed": "#001f26",
+            "on-secondary-fixed-variant": "#004e5c",
+            "tertiary": "#16835d",
+            "tertiary-container": "#d9f6e9",
+            "tertiary-fixed": "#6ffbbe",
+            "tertiary-fixed-dim": "#4edea3",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-container": "#005236",
+            "on-tertiary-fixed": "#002113",
+            "on-tertiary-fixed-variant": "#005236",
+            "surface": "#faf8ff",
+            "surface-dim": "#d2d9f4",
+            "surface-bright": "#ffffff",
+            "surface-variant": "#e8eaf5",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f5f5fb",
+            "surface-container": "#eef0f8",
+            "surface-container-high": "#e7e9f3",
+            "surface-container-highest": "#dfe3ef",
+            "background": "#f7f8fc",
+            "on-background": "#131b2e",
+            "on-surface": "#131b2e",
+            "on-surface-variant": "#596174",
+            "outline": "#858ba0",
+            "outline-variant": "#d8dbe7",
+            "surface-tint": "#5148d7",
+            "inverse-surface": "#283044",
+            "inverse-on-surface": "#eef0ff",
+            "inverse-primary": "#c3c0ff",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "on-error": "#ffffff",
+            "on-error-container": "#93000a"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          spacing: {
+            "space-xl": "2rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin": "1rem",
+            "gutter": "1rem"
+          },
+          fontFamily: {
+            "body-lg": ["Geist", "sans-serif"],
+            "label-md": ["Geist", "sans-serif"],
+            "code-num": ["Geist", "sans-serif"],
+            "headline-xl": ["Space Grotesk", "sans-serif"],
+            "body-sm": ["Geist", "sans-serif"],
+            "headline-md": ["Space Grotesk", "sans-serif"],
+            "headline-sm": ["Space Grotesk", "sans-serif"],
+            "body-md": ["Geist", "sans-serif"],
+            "label-sm": ["Geist", "sans-serif"],
+            "headline-lg": ["Space Grotesk", "sans-serif"]
+          },
+          fontSize: {
+            "label-sm": ["0.75rem", { lineHeight: "1rem", fontWeight: "600" }],
+            "label-md": ["0.8125rem", { lineHeight: "1.25rem", fontWeight: "600" }],
+            "body-sm": ["0.875rem", { lineHeight: "1.45" }],
+            "body-md": ["0.9375rem", { lineHeight: "1.6" }],
+            "body-lg": ["1rem", { lineHeight: "1.6" }],
+            "headline-sm": ["1.125rem", { lineHeight: "1.4", fontWeight: "700" }],
+            "headline-md": ["1.5rem", { lineHeight: "1.3", fontWeight: "700" }],
+            "headline-lg": ["1.875rem", { lineHeight: "1.2", fontWeight: "700" }],
+            "headline-xl": ["2.25rem", { lineHeight: "1.1", fontWeight: "700" }]
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Original PulsePay Stylesheet -->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body class="bg-surface font-body-md text-on-surface antialiased min-h-screen">
+
+  <!-- ============================================================
+       SIDEBAR NAVIGATION
+       ============================================================ -->
+
+  <aside id="appSidebar"
+    class="fixed left-0 top-0 h-screen w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-lg transition-all duration-200">
+
+    <div class="flex flex-col">
+
+      <!-- BRAND -->
+      <div class="h-16 px-space-md flex items-center justify-between border-b border-surface-container-high/30">
+
+        <div class="flex items-center gap-space-sm cursor-pointer"
+          onclick="switchView('overview')">
+
+          <div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container font-bold glow-primary-sm">
+            <span class="material-symbols-outlined text-[20px]">
+              account_balance_wallet
+            </span>
+          </div>
+
+          <div class="flex flex-col">
+            <span class="font-headline-sm text-on-surface tracking-tight leading-none">
+              PulsePay AI
+            </span>
+
+            <span class="font-label-sm text-primary-fixed-dim uppercase tracking-wider mt-1">
+              Freelance OS
+            </span>
+          </div>
+
+        </div>
+
+        <span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant text-label-sm">
+          v2.5
+        </span>
+
+      </div>
+
+      <!-- NAVIGATION -->
+      <nav class="flex flex-col px-space-sm py-space-md space-y-1">
+
+        <a class="nav-item group flex items-center justify-between px-space-md py-space-sm rounded-lg transition-all duration-150 bg-surface-container-high text-primary font-bold"
+          data-path="overview" href="#overview">
+
+          <div class="flex items-center gap-space-sm">
+            <span class="material-symbols-outlined text-[18px]">dashboard</span>
+            <span>Overview</span>
+          </div>
+
+        </a>
+
+        <a class="nav-item group flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high"
+          data-path="my-invoices" href="#my-invoices">
+
+          <div class="flex items-center gap-space-sm">
+            <span class="material-symbols-outlined text-[18px]">receipt_long</span>
+            <span>My Invoices</span>
+          </div>
+
+          <span id="navInvoiceCount"
+            class="px-2 py-0.5 rounded-full bg-surface-container text-label-sm">
+            0
+          </span>
+
+        </a>
+
+        <a class="nav-item group flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high"
+          data-path="create-invoice" href="#create-invoice">
+
+          <div class="flex items-center gap-space-sm">
+            <span class="material-symbols-outlined text-[18px]">post_add</span>
+            <span>Create Invoice</span>
+          </div>
+
+        </a>
+
+        <a class="nav-item group flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high"
+          data-path="ai-payment-insights" href="#ai-payment-insights">
+
+          <div class="flex items-center gap-space-sm">
+            <span class="material-symbols-outlined text-[18px]">psychology</span>
+            <span>AI Payment Insights</span>
+          </div>
+
+          <span class="px-1.5 py-0.5 rounded bg-primary-container text-on-primary-container text-label-sm">
+            AI
+          </span>
+
+        </a>
+
+        <!-- FIXED CLIENT HISTORY NAVIGATION -->
+        <a class="nav-item group flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high"
+          data-path="client-history" href="#client-history">
+
+          <div class="flex items-center gap-space-sm">
+            <span class="material-symbols-outlined text-[18px]">
+              account_balance_wallet
+            </span>
+
+            <span>Client Payment History</span>
+          </div>
+
+        </a>
+
+        <a class="nav-item group flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high"
+          data-path="payment-follow-ups" href="#payment-follow-ups">
+
+          <div class="flex items-center gap-space-sm">
+            <span class="material-symbols-outlined text-[18px]">
+              notifications_active
+            </span>
+
+            <span>Payment Follow-ups</span>
+          </div>
+
+        </a>
+
+        <a class="nav-item group flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high"
+          data-path="paypal-payments" href="#paypal-payments">
+
+          <div class="flex items-center gap-space-sm">
+            <span class="material-symbols-outlined text-[18px]">
+              credit_card
+            </span>
+
+            <span>PayPal Payments</span>
+          </div>
+
+          <span class="text-primary-fixed-dim text-label-sm">
+            Sandbox
+          </span>
+
+        </a>
+
+        <a class="nav-item group flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high"
+          data-path="settings" href="#settings">
+
+          <div class="flex items-center gap-space-sm">
+            <span class="material-symbols-outlined text-[18px]">tune</span>
+            <span>Settings</span>
+          </div>
+
+        </a>
+
+      </nav>
+
+    </div>
+
+    <!-- SIDEBAR FOOTER -->
+    <div class="p-space-md bg-surface-container-lowest flex flex-col gap-space-sm border-t border-surface-container-high/30">
+
+      <div class="px-space-md py-space-sm rounded-xl bg-surface-container-low flex items-center justify-between">
+
+        <div class="flex items-center gap-space-sm">
+
+          <span id="backendDot"
+            class="relative inline-flex rounded-full h-2 w-2 bg-secondary-container">
+          </span>
+
+          <div class="flex flex-col">
+
+            <span class="text-sm text-on-surface font-medium">
+              FastAPI Backend
+            </span>
+
+            <!-- UPDATED PORT -->
+            <span id="backendStatusPill"
+              class="text-label-sm text-primary-fixed-dim">
+              127.0.0.1:8001
+            </span>
+
+          </div>
+
+        </div>
+
+        <span class="material-symbols-outlined text-[16px]">
+          dns
+        </span>
+
+      </div>
+
+      <button id="toggleSidebarBtn"
+        class="w-full flex items-center justify-center gap-space-sm py-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high"
+        type="button">
+
+        <span class="material-symbols-outlined text-[18px]">
+          keyboard_double_arrow_left
+        </span>
+
+        <span class="text-label-sm">
+          Collapse Sidebar
+        </span>
+
+      </button>
+
+    </div>
+
+  </aside>
+
+
+  <!-- ============================================================
+       MAIN CONTAINER
+       ============================================================ -->
+
+  <div class="pl-64 flex flex-col min-h-screen" id="mainContainer">
+
+    <!-- TOP HEADER -->
+    <header
+      class="sticky top-0 left-64 right-0 min-h-16 bg-surface/95 backdrop-blur-xl z-40 px-space-lg flex items-center justify-between gap-space-md border-b border-surface-container-high/40">
+
+      <div class="flex items-center gap-space-md flex-1 max-w-xl">
+
+        <button class="mobile-menu-trigger" type="button" aria-label="Open navigation" onclick="document.getElementById('appSidebar').classList.toggle('mobile-open')">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+
+        <div class="relative w-full flex items-center">
+
+          <span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[18px]">
+            search
+          </span>
+
+          <input id="globalSearchInput"
+            class="w-full pl-9 pr-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface text-body-sm placeholder:text-on-surface-variant focus:outline-none focus:ring-1 focus:ring-primary-container"
+            placeholder="Search invoices by client, service or ID..."
+            type="search"/>
+
+        </div>
+
+        <div class="hidden xl:flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container-low text-secondary text-label-sm">
+          <span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+          PayPal Sandbox
+        </div>
+
+      </div>
+
+      <div class="flex items-center gap-space-md">
+
+        <button onclick="switchView('create-invoice')"
+          class="hidden sm:inline-flex items-center gap-space-xs px-space-md py-2 rounded-lg bg-primary-container text-on-primary-container font-semibold glow-primary hover:bg-primary-fixed-dim"
+          type="button">
+
+          <span class="material-symbols-outlined text-[18px]">add</span>
+          New Invoice
+
+        </button>
+
+        <button onclick="loadInvoicesFromBackend()"
+          class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high"
+          type="button" title="Refresh Dashboard">
+
+          <span class="material-symbols-outlined text-[20px]">refresh</span>
+
+        </button>
+
+        <div class="flex items-center gap-space-sm px-space-sm bg-surface-container-lowest/50 py-1 pr-space-sm rounded-full border border-surface-container-high/30">
+
+          <div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary-fixed-dim font-bold text-sm">
+            FP
+          </div>
+
+          <div class="hidden md:flex flex-col">
+            <span class="font-semibold text-sm">Freelancer</span>
+            <span class="text-label-sm text-on-surface-variant">Payment Assistant</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+    <!-- ============================================================
+         MAIN CONTENT
+         ============================================================ -->
+
+    <main class="w-full bg-surface min-h-screen">
+
+      <!-- ========================================================
+           VIEW 1: OVERVIEW
+           ======================================================== -->
+
+      <section id="view-overview"
+        class="view-section px-space-md sm:px-space-lg lg:px-space-xl py-space-lg flex flex-col gap-space-lg max-w-[1536px] mx-auto w-full">
+
+        <!-- HERO -->
+        <div class="relative overflow-hidden rounded-xl bg-surface-container-low p-space-lg shadow-lg border border-surface-container-high/40">
+
+          <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-primary-container/5 blur-3xl pointer-events-none"></div>
+
+          <div class="relative z-10 flex flex-col xl:flex-row xl:items-center xl:justify-between gap-space-md">
+
+            <div class="flex flex-col gap-space-xs max-w-3xl">
+
+              <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-surface-container-high text-primary-fixed-dim text-label-sm">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                Ledger Synchronized
+              </span>
+
+              <h1 class="font-headline-lg text-3xl text-primary tracking-tight">
+                Payment Command Center
+              </h1>
+
+              <p class="text-body-md text-on-surface-variant leading-relaxed">
+                Autonomous invoice tracking, AI payment risk scoring, and PayPal Sandbox settlements for global client contracts.
+              </p>
+
+            </div>
+
+            <div class="flex flex-wrap items-center gap-space-sm">
+
+              <button onclick="testPayPalConnection()"
+                class="flex items-center gap-1.5 px-space-md py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface text-label-sm">
+                <span class="material-symbols-outlined text-primary-fixed-dim">credit_card</span>
+                Test PayPal
+              </button>
+
+              <button onclick="switchView('my-invoices')"
+                class="flex items-center gap-1.5 px-space-md py-2.5 rounded-lg bg-surface-container-high text-on-surface text-label-sm">
+                <span class="material-symbols-outlined">analytics</span>
+                View Invoices
+              </button>
+
+              <button onclick="switchView('create-invoice')"
+                class="flex items-center gap-1.5 px-space-md py-2.5 rounded-lg bg-primary-container text-on-primary-container font-semibold">
+                <span class="material-symbols-outlined">add_circle</span>
+                Create Invoice
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- CLICKABLE INVOICE STATUS KPIs -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+
+          <button type="button" class="kpi-card w-full text-left rounded-xl bg-surface-container-lowest p-space-lg border border-surface-container-high/50 shadow-sm" onclick="switchView('my-invoices'); filterInvoicesByStatus('all')" aria-label="View all invoices">
+            <span class="kpi-icon kpi-icon-purple"><span class="material-symbols-outlined">receipt_long</span></span>
+            <span class="text-label-sm uppercase tracking-wider text-on-surface-variant mt-3">Total Invoices</span>
+            <span id="totalInvoices" class="block mt-2 text-3xl font-bold text-on-surface font-code-num">0</span>
+            <span class="text-label-sm text-on-surface-variant">All invoices in your ledger</span>
+            <span class="kpi-hint">View all invoices <span class="material-symbols-outlined">arrow_forward</span></span>
+          </button>
+
+          <button type="button" class="kpi-card w-full text-left rounded-xl bg-surface-container-lowest p-space-lg border border-surface-container-high/50 shadow-sm" onclick="switchView('my-invoices'); filterInvoicesByStatus('paid')" aria-label="View paid invoices">
+            <span class="kpi-icon kpi-icon-green"><span class="material-symbols-outlined">task_alt</span></span>
+            <span class="text-label-sm uppercase tracking-wider text-on-surface-variant mt-3">Paid Invoices</span>
+            <span id="paidInvoices" class="block mt-2 text-3xl font-bold text-green-700 font-code-num">0</span>
+            <span class="text-label-sm text-on-surface-variant">Settled in full</span>
+            <span class="kpi-hint">View paid invoices <span class="material-symbols-outlined">arrow_forward</span></span>
+          </button>
+
+          <button type="button" class="kpi-card w-full text-left rounded-xl bg-surface-container-lowest p-space-lg border border-surface-container-high/50 shadow-sm" onclick="switchView('my-invoices'); filterInvoicesByStatus('pending')" aria-label="View pending invoices">
+            <span class="kpi-icon kpi-icon-amber"><span class="material-symbols-outlined">schedule</span></span>
+            <span class="text-label-sm uppercase tracking-wider text-on-surface-variant mt-3">Pending Invoices</span>
+            <span id="pendingInvoices" class="block mt-2 text-3xl font-bold text-amber-700 font-code-num">0</span>
+            <span class="text-label-sm text-on-surface-variant">Awaiting settlement</span>
+            <span class="kpi-hint">View pending invoices <span class="material-symbols-outlined">arrow_forward</span></span>
+          </button>
+
+          <button type="button" class="kpi-card w-full text-left rounded-xl bg-surface-container-lowest p-space-lg border border-surface-container-high/50 shadow-sm" onclick="switchView('my-invoices'); filterInvoicesByStatus('overdue')" aria-label="View overdue invoices">
+            <span class="kpi-icon kpi-icon-red"><span class="material-symbols-outlined">warning</span></span>
+            <span class="text-label-sm uppercase tracking-wider text-on-surface-variant mt-3">Overdue Invoices</span>
+            <span id="overdueInvoices" class="block mt-2 text-3xl font-bold text-red-700 font-code-num">0</span>
+            <span class="text-label-sm text-on-surface-variant">Past the payment due date</span>
+            <span class="kpi-hint">View overdue invoices <span class="material-symbols-outlined">arrow_forward</span></span>
+          </button>
+
+        </div>
+
+        <!-- LIVE FINANCIAL TOTALS -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md">
+          <div class="financial-card">
+            <span class="financial-icon"><span class="material-symbols-outlined">account_balance_wallet</span></span>
+            <div><span class="text-label-sm text-on-surface-variant">Total Revenue</span><strong>₹<span id="totalRevenue">0</span></strong><span class="financial-note">Gross billed volume</span></div>
+          </div>
+          <div class="financial-card">
+            <span class="financial-icon financial-icon-green"><span class="material-symbols-outlined">south_west</span></span>
+            <div><span class="text-label-sm text-on-surface-variant">Received Revenue</span><strong class="financial-green">₹<span id="receivedRevenue">0</span></strong><span class="financial-note">Payments cleared</span></div>
+          </div>
+          <div class="financial-card">
+            <span class="financial-icon financial-icon-amber"><span class="material-symbols-outlined">pending_actions</span></span>
+            <div><span class="text-label-sm text-on-surface-variant">Outstanding Amount</span><strong class="financial-amber">₹<span id="pendingRevenue">0</span></strong><span class="financial-note">Pending + overdue invoices</span></div>
+          </div>
+        </div>
+
+        <!-- RECENT INVOICES -->
+        <div class="rounded-xl bg-surface-container-low p-space-lg border border-surface-container-high/40">
+
+          <div class="flex items-center justify-between gap-2 mb-space-md">
+
+            <h2 class="text-lg font-bold text-on-surface">
+              Recent Invoices Snapshot
+            </h2>
+
+            <button onclick="switchView('my-invoices')"
+              class="text-primary-fixed-dim hover:text-primary text-label-sm flex items-center gap-1">
+              View Full Ledger
+              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </button>
+
+          </div>
+
+          <div class="overflow-x-auto">
+
+            <table class="w-full text-left border-collapse">
+
+              <thead>
+                <tr class="border-b border-surface-container-high text-on-surface-variant text-label-sm uppercase">
+                  <th class="py-3 px-4">Invoice ID</th>
+                  <th class="py-3 px-4">Client</th>
+                  <th class="py-3 px-4">Service</th>
+                  <th class="py-3 px-4 text-right">Amount</th>
+                  <th class="py-3 px-4">Due Date</th>
+                  <th class="py-3 px-4 text-center">Status</th>
+                  <th class="py-3 px-4">Actions</th>
+                </tr>
+              </thead>
+
+              <tbody id="overviewRecentInvoicesList">
+                <tr>
+                  <td colspan="7" class="py-8 text-center text-on-surface-variant">
+                    Loading invoices from backend...
+                  </td>
+                </tr>
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================================
+           VIEW 2: MY INVOICES
+           ======================================================== -->
+
+      <section id="view-my-invoices"
+        class="view-section hidden px-space-md sm:px-space-lg lg:px-space-xl py-space-lg flex flex-col gap-space-lg max-w-[1536px] mx-auto w-full">
+
+        <div class="flex flex-col xl:flex-row xl:items-end justify-between gap-space-md">
+
+          <div>
+            <span class="text-primary-fixed-dim text-label-sm uppercase tracking-wider">
+              Settlement Engine
+            </span>
+
+            <h1 class="text-3xl font-bold text-on-surface mt-2">
+              Invoice Ledger & Receivables
+            </h1>
+
+            <p class="text-body-md text-on-surface-variant mt-2">
+              Track invoices, analyse payment risk and settle payments using PayPal Sandbox.
+            </p>
+
+          </div>
+
+          <div class="flex flex-wrap gap-space-sm">
+
+            <button onclick="deleteAllInvoices()"
+              class="px-space-md py-2 rounded-lg bg-surface-container-high text-error hover:bg-error-container/30">
+              <span class="material-symbols-outlined align-middle">delete_sweep</span>
+              Delete All Invoices
+            </button>
+
+            <button onclick="switchView('create-invoice')"
+              class="px-space-md py-2 rounded-lg bg-primary-container text-on-primary-container font-semibold">
+              <span class="material-symbols-outlined align-middle">add_circle</span>
+              Create New Invoice
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- SEARCH AND FILTERS -->
+        <div class="flex flex-col sm:flex-row items-stretch justify-between gap-space-md bg-surface-container-low p-space-md rounded-xl border border-surface-container-high/40">
+
+          <input id="searchInvoice"
+            class="w-full sm:max-w-md px-4 py-2 rounded-lg bg-surface-container text-on-surface border border-surface-container-high focus:outline-none focus:ring-1 focus:ring-primary-container"
+            placeholder="Search client, service or invoice ID..."
+            type="search"
+            oninput="searchInvoices()"/>
+
+          <div class="flex items-center gap-1 bg-surface-container p-1 rounded-lg">
+
+            <button class="filter-btn px-3 py-1.5 rounded bg-primary-container text-on-primary-container text-label-sm"
+              data-filter="all"
+              onclick="filterInvoicesByStatus('all')">
+              All
+            </button>
+
+            <button class="filter-btn px-3 py-1.5 rounded text-on-surface-variant text-label-sm"
+              data-filter="pending"
+              onclick="filterInvoicesByStatus('pending')">
+              Pending
+            </button>
+
+            <button class="filter-btn px-3 py-1.5 rounded text-on-surface-variant text-label-sm"
+              data-filter="paid"
+              onclick="filterInvoicesByStatus('paid')">
+              Paid
+            </button>
+
+            <button class="filter-btn px-3 py-1.5 rounded text-on-surface-variant text-label-sm"
+              data-filter="overdue"
+              onclick="filterInvoicesByStatus('overdue')">
+              Overdue
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- DYNAMIC INVOICE LIST -->
+        <div id="invoiceList"
+          class="flex flex-col gap-space-md">
+
+          <div class="p-8 text-center text-on-surface-variant bg-surface-container-low rounded-xl">
+            Loading invoice ledger...
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================================
+           VIEW 3: CREATE INVOICE
+           ======================================================== -->
+
+      <section id="view-create-invoice"
+        class="view-section hidden px-space-md sm:px-space-lg lg:px-space-xl py-space-lg flex flex-col gap-space-lg max-w-[960px] mx-auto w-full">
+
+        <div>
+          <span class="text-primary-fixed-dim text-label-sm uppercase tracking-wider">
+            Invoice Engine
+          </span>
+
+          <h1 class="text-3xl font-bold text-on-surface mt-2">
+            Create New Invoice
+          </h1>
+
+          <p class="text-body-md text-on-surface-variant mt-2">
+            Save a new invoice directly into the backend SQLite database.
+          </p>
+        </div>
+
+
+        <div class="bg-surface-container-low p-space-xl rounded-xl border border-surface-container-high/40 shadow-lg">
+
+          <!-- IMPORTANT: JS handles this form's submit event. -->
+          <form id="createInvoiceForm"
+            class="flex flex-col gap-space-md">
+
+            <div class="flex flex-col gap-1.5">
+
+              <label for="clientName" class="text-label-md text-on-surface font-medium">
+                Client Name
+              </label>
+
+              <input type="text"
+                id="clientName"
+                class="w-full px-4 py-2.5 rounded-lg bg-surface-container text-on-surface border border-surface-container-high focus:outline-none focus:ring-1 focus:ring-primary-container"
+                placeholder="e.g. ABC Company"
+                minlength="2"
+                required/>
+
+            </div>
+
+
+            <div class="flex flex-col gap-1.5">
+
+              <label for="service" class="text-label-md text-on-surface font-medium">
+                Service Description
+              </label>
+
+              <input type="text"
+                id="service"
+                class="w-full px-4 py-2.5 rounded-lg bg-surface-container text-on-surface border border-surface-container-high focus:outline-none focus:ring-1 focus:ring-primary-container"
+                placeholder="e.g. AI Development"
+                minlength="2"
+                required/>
+
+            </div>
+
+
+            <div class="flex flex-col gap-1.5">
+
+              <label for="amount" class="text-label-md text-on-surface font-medium">
+                Invoice Amount (₹ INR)
+              </label>
+
+              <input type="number"
+                id="amount"
+                min="0.01"
+                step="0.01"
+                class="w-full px-4 py-2.5 rounded-lg bg-surface-container text-on-surface border border-surface-container-high focus:outline-none focus:ring-1 focus:ring-primary-container"
+                placeholder="10000"
+                required/>
+
+              <p class="text-label-sm text-on-surface-variant">
+                PayPal USD conversion is calculated automatically by the backend.
+              </p>
+
+            </div>
+
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+
+              <div class="flex flex-col gap-1.5">
+
+                <label for="invoiceDate" class="text-label-md text-on-surface font-medium">
+                  Invoice Date
+                </label>
+
+                <input type="date"
+                  id="invoiceDate"
+                  class="w-full px-4 py-2.5 rounded-lg bg-surface-container text-on-surface border border-surface-container-high"
+                  required/>
+
+              </div>
+
+
+              <div class="flex flex-col gap-1.5">
+
+                <label for="dueDate" class="text-label-md text-on-surface font-medium">
+                  Payment Due Date
+                </label>
+
+                <input type="date"
+                  id="dueDate"
+                  class="w-full px-4 py-2.5 rounded-lg bg-surface-container text-on-surface border border-surface-container-high"
+                  required/>
+
+              </div>
+
+            </div>
+
+
+            <div class="flex items-center justify-end gap-space-sm pt-space-md border-t border-surface-container-high">
+
+              <button type="button"
+                onclick="switchView('my-invoices')"
+                class="px-space-md py-2.5 rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high">
+                Cancel
+              </button>
+
+              <button type="submit"
+                id="createInvoiceBtn"
+                class="flex items-center gap-2 px-space-lg py-2.5 rounded-lg bg-primary-container text-on-primary-container font-semibold hover:bg-primary-fixed-dim glow-primary">
+
+                <span class="material-symbols-outlined text-[18px]">send</span>
+                Save Invoice
+
+              </button>
+
+            </div>
+
+          </form>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================================
+           VIEW 4: AI PAYMENT INSIGHTS
+           ======================================================== -->
+
+      <section id="view-ai-payment-insights"
+        class="view-section hidden px-space-md sm:px-space-lg lg:px-space-xl py-space-lg flex flex-col gap-space-lg max-w-[1536px] mx-auto w-full">
+
+        <div>
+
+          <span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container text-label-sm uppercase tracking-wider font-semibold">
+            Payment Intelligence
+          </span>
+
+          <h1 class="text-3xl font-bold text-on-surface mt-3">
+            AI Payment Insights
+          </h1>
+
+          <p class="text-body-md text-on-surface-variant mt-2">
+            Analyse payment risk, overdue status, invoice priority and payment predictions.
+          </p>
+
+        </div>
+
+
+        <div id="aiInsights"
+          class="flex flex-col gap-space-md">
+
+          <div class="p-space-xl rounded-xl bg-surface-container-low border border-surface-container-high/40 text-center flex flex-col items-center justify-center gap-space-sm min-h-[320px]">
+
+            <div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-primary-fixed-dim mb-2">
+
+              <span class="material-symbols-outlined text-[36px]">
+                psychology
+              </span>
+
+            </div>
+
+            <h3 class="text-xl font-bold text-on-surface">
+              No Invoice Currently Selected
+            </h3>
+
+            <p class="text-body-md text-on-surface-variant max-w-md">
+              Select AI Analyze or Predict Payment from your invoice ledger to view payment intelligence.
+            </p>
+
+            <button onclick="switchView('my-invoices')"
+              class="mt-2 px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-on-surface text-label-md">
+              Open My Invoices
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================================
+           VIEW 5: CLIENT PAYMENT HISTORY
+           ======================================================== -->
+
+      <section id="view-client-history"
+        class="view-section hidden px-space-md sm:px-space-lg lg:px-space-xl py-space-lg flex flex-col gap-space-lg max-w-[1536px] mx-auto w-full">
+
+        <div>
+
+          <span class="px-2 py-0.5 rounded bg-surface-container-high text-primary-fixed-dim text-label-sm uppercase tracking-wider">
+            Client Intelligence
+          </span>
+
+          <h1 class="text-3xl font-bold text-on-surface mt-3">
+            Client Payment History
+          </h1>
+
+          <p class="text-body-md text-on-surface-variant mt-2">
+            Review client payment records, reliability scores and settled invoice amounts.
+          </p>
+
+        </div>
+
+
+        <div id="paymentHistory"
+          class="flex flex-col gap-space-md">
+
+          <div class="p-space-xl rounded-xl bg-surface-container-low border border-surface-container-high/40 text-center flex flex-col items-center justify-center gap-space-sm min-h-[320px]">
+
+            <span class="material-symbols-outlined text-[36px] text-secondary">
+              account_balance_wallet
+            </span>
+
+            <h3 class="text-xl font-bold text-on-surface">
+              No Client Selected
+            </h3>
+
+            <p class="text-body-md text-on-surface-variant max-w-md">
+              Select Client History from an invoice in your ledger to inspect client statistics.
+            </p>
+
+            <button onclick="switchView('my-invoices')"
+              class="mt-2 px-space-md py-2 rounded-lg bg-surface-container-high text-on-surface text-label-md">
+              Open My Invoices
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================================
+           VIEW 6: PAYMENT FOLLOW-UPS
+           ======================================================== -->
+
+      <section id="view-payment-follow-ups"
+        class="view-section hidden px-space-md sm:px-space-lg lg:px-space-xl py-space-lg flex flex-col gap-space-lg max-w-[1536px] mx-auto w-full">
+
+        <div>
+
+          <span class="px-2 py-0.5 rounded bg-surface-container-high text-primary-fixed-dim text-label-sm uppercase tracking-wider">
+            Escalation Engine
+          </span>
+
+          <h1 class="text-3xl font-bold text-on-surface mt-3">
+            Payment Follow-ups & Reminders
+          </h1>
+
+          <p class="text-body-md text-on-surface-variant mt-2">
+            Generate personalized payment reminders and track follow-up history.
+          </p>
+
+        </div>
+
+
+        <div id="paymentFollowups"
+          class="flex flex-col gap-space-md">
+
+          <div class="p-space-xl rounded-xl bg-surface-container-low border border-surface-container-high/40 text-center flex flex-col items-center justify-center gap-space-sm min-h-[320px]">
+
+            <span class="material-symbols-outlined text-[36px] text-primary-fixed-dim">
+              notifications_active
+            </span>
+
+            <h3 class="text-xl font-bold text-on-surface">
+              Payment Follow-up Management
+            </h3>
+
+            <p class="text-body-md text-on-surface-variant max-w-md">
+              Generate personalised payment reminders from your invoice ledger.
+            </p>
+
+            <button onclick="switchView('my-invoices')"
+              class="mt-2 px-space-md py-2 rounded-lg bg-surface-container-high text-on-surface text-label-md">
+              Open Invoice Ledger
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================================
+           VIEW 7: PAYPAL SANDBOX
+           ======================================================== -->
+
+      <section id="view-paypal-payments"
+        class="view-section hidden px-space-md sm:px-space-lg lg:px-space-xl py-space-lg flex flex-col gap-space-lg max-w-[1536px] mx-auto w-full">
+
+        <div>
+
+          <span class="px-2 py-0.5 rounded bg-surface-container-high text-primary-fixed-dim text-label-sm uppercase tracking-wider">
+            Gateway Hub
+          </span>
+
+          <h1 class="text-3xl font-bold text-on-surface mt-3">
+            PayPal Sandbox Gateway
+          </h1>
+
+          <p class="text-body-md text-on-surface-variant mt-2">
+            Test OAuth connectivity, create PayPal orders, check transaction status and capture approved payments.
+          </p>
+
+        </div>
+
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+
+          <!-- PAYPAL CONNECTION -->
+          <div class="bg-surface-container-low p-space-lg rounded-xl border border-surface-container-high/40 shadow-sm flex flex-col justify-between gap-space-md">
+
+            <div>
+
+              <span class="text-label-sm uppercase tracking-wider text-on-surface-variant">
+                Sandbox Connectivity
+              </span>
+
+              <h2 class="text-xl font-bold text-on-surface mt-2">
+                PayPal OAuth Engine
+              </h2>
+
+              <p class="text-body-sm text-on-surface-variant mt-2">
+                Test the connection between FastAPI and PayPal Sandbox.
+              </p>
+
+            </div>
+
+            <div id="paypalConnectionResult"
+              class="p-space-sm rounded-lg bg-surface-container text-body-sm text-on-surface-variant">
+              Status: Ready to test connection
+            </div>
+
+            <button id="testPayPalBtn"
+              onclick="testPayPalConnection()"
+              class="flex items-center justify-center gap-2 px-space-md py-2.5 rounded-lg bg-primary-container text-on-primary-container font-semibold hover:bg-primary-fixed-dim"
+              type="button">
+
+              <span class="material-symbols-outlined text-[18px]">verified</span>
+              Test Live Connection
+
+            </button>
+
+          </div>
+
+
+          <!-- ORDER WORKFLOW -->
+          <div class="bg-surface-container-low p-space-lg rounded-xl border border-surface-container-high/40 shadow-sm flex flex-col justify-between gap-space-md">
+
+            <div>
+
+              <span class="text-label-sm uppercase tracking-wider text-on-surface-variant">
+                Order Workflow
+              </span>
+
+              <h2 class="text-xl font-bold text-on-surface mt-2">
+                Invoice Order Creation
+              </h2>
+
+              <p class="text-body-sm text-on-surface-variant mt-2 leading-relaxed">
+                Clicking PayPal on an unpaid invoice creates a Sandbox order using the INR amount saved in SQLite. The backend calculates the USD amount automatically.
+              </p>
+
+            </div>
+
+            <div class="p-space-sm rounded-lg bg-surface-container text-body-sm text-on-surface-variant flex items-center gap-2">
+
+              <span class="material-symbols-outlined text-secondary">
+                info
+              </span>
+
+              PayPal Sandbox credentials are stored securely in your backend .env file.
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- EXISTING ORDER STATUS CHECK -->
+        <div class="bg-surface-container-low p-space-lg rounded-xl border border-surface-container-high/40 shadow-sm">
+
+          <h2 class="text-xl font-bold text-on-surface">
+            Check Existing PayPal Order
+          </h2>
+
+          <p class="text-body-sm text-on-surface-variant mt-2">
+            Check the actual PayPal order and capture status without attempting another charge.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-space-sm mt-4">
+
+            <input id="manualOrderIdInput"
+              type="text"
+              placeholder="Enter PayPal Order ID"
+              class="flex-1 px-4 py-2.5 rounded-lg bg-surface-container text-on-surface border border-surface-container-high focus:outline-none focus:ring-1 focus:ring-primary-container"/>
+
+            <button onclick="checkPayPalOrderFromInput()"
+              class="px-space-md py-2.5 rounded-lg bg-primary-container text-on-primary-container font-semibold hover:bg-primary-fixed-dim"
+              type="button">
+
+              <span class="material-symbols-outlined align-middle text-[18px]">
+                manage_search
+              </span>
+
+              Check Order Status
+
+            </button>
+
+          </div>
+
+          <pre id="paypalOrderStatusResult"
+            class="mt-4 p-space-md rounded-lg bg-surface-container-lowest text-on-surface-variant text-body-sm overflow-x-auto whitespace-pre-wrap">No PayPal order checked yet.</pre>
+
+        </div>
+
+
+        <!-- WORKFLOW INFORMATION -->
+        <div class="bg-surface-container-low p-space-lg rounded-xl border border-surface-container-high/40">
+
+          <h2 class="text-lg font-bold text-on-surface">
+            Payment Workflow
+          </h2>
+
+          <ol class="list-decimal pl-5 mt-3 space-y-2 text-body-sm text-on-surface-variant">
+
+            <li>Create an invoice in INR.</li>
+            <li>Backend converts the invoice amount into USD using the configured conversion factor.</li>
+            <li>Backend creates a PayPal Sandbox order.</li>
+            <li>Buyer approves the payment in PayPal Sandbox.</li>
+            <li>PayPal redirects the buyer back to the frontend.</li>
+            <li>Backend verifies the completed payment capture.</li>
+            <li>Invoice status changes to paid only after verification.</li>
+
+          </ol>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================================
+           VIEW 8: SETTINGS
+           ======================================================== -->
+
+      <section id="view-settings"
+        class="view-section hidden px-space-md sm:px-space-lg lg:px-space-xl py-space-lg flex flex-col gap-space-lg max-w-[960px] mx-auto w-full">
+
+        <div>
+
+          <span class="px-2 py-0.5 rounded bg-surface-container-high text-primary-fixed-dim text-label-sm uppercase tracking-wider">
+            System Settings
+          </span>
+
+          <h1 class="text-3xl font-bold text-on-surface mt-3">
+            API & System Settings
+          </h1>
+
+          <p class="text-body-md text-on-surface-variant mt-2">
+            Current application configuration.
+          </p>
+
+        </div>
+
+
+        <div class="bg-surface-container-low p-space-lg rounded-xl border border-surface-container-high/40 shadow-sm flex flex-col gap-space-md">
+
+          <div class="flex flex-col gap-1.5">
+
+            <label class="text-label-md text-on-surface font-medium">
+              FastAPI Backend URL
+            </label>
+
+            <!-- UPDATED TO PORT 8001 -->
+            <input type="text"
+              id="settingsBackendUrl"
+              value="http://127.0.0.1:8001"
+              readonly
+              class="w-full px-4 py-2.5 rounded-lg bg-surface-container text-on-surface font-code-num border border-surface-container-high"/>
+
+            <span class="text-on-surface-variant text-label-sm">
+              Updated backend configuration.
+            </span>
+
+          </div>
+
+
+          <div class="flex flex-col gap-1.5 pt-2 border-t border-surface-container-high">
+
+            <label class="text-label-md text-on-surface font-medium">
+              Database Path
+            </label>
+
+            <input type="text"
+              value="back-end/invoices.db (SQLite)"
+              readonly
+              class="w-full px-4 py-2.5 rounded-lg bg-surface-container text-on-surface font-code-num border border-surface-container-high"/>
+
+          </div>
+
+
+          <div class="flex flex-col gap-1.5 pt-2 border-t border-surface-container-high">
+
+            <label class="text-label-md text-on-surface font-medium">
+              AI Risk Engine
+            </label>
+
+            <input type="text"
+              value="payment_engine.py"
+              readonly
+              class="w-full px-4 py-2.5 rounded-lg bg-surface-container text-on-surface font-code-num border border-surface-container-high"/>
+
+          </div>
+
+
+          <div class="flex flex-col gap-1.5 pt-2 border-t border-surface-container-high">
+
+            <label class="text-label-md text-on-surface font-medium">
+              Payment Gateway
+            </label>
+
+            <input type="text"
+              value="PayPal Sandbox"
+              readonly
+              class="w-full px-4 py-2.5 rounded-lg bg-surface-container text-on-surface font-code-num border border-surface-container-high"/>
+
+          </div>
+
+
+          <button onclick="testBackendConnection()"
+            class="flex items-center justify-center gap-2 px-space-md py-2.5 rounded-lg bg-primary-container text-on-primary-container font-semibold"
+            type="button">
+
+            <span class="material-symbols-outlined">wifi</span>
+            Test Backend Connection
+
+          </button>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- TOAST NOTIFICATIONS -->
+  <div id="toast-container"></div>
+
+
+  <!-- Close the mobile navigation after a section is selected. -->
+  <script>
+    document.querySelectorAll("#appSidebar .nav-item").forEach(link => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth <= 900) {
+          document.getElementById("appSidebar")?.classList.remove("mobile-open");
+        }
+      });
+    });
+  </script>
+
+  <!-- Original PulsePay application controller — preserved unchanged. -->
+  <script src="script.js"></script>
+
+</body>
+</html>

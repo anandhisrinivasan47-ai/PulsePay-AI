@@ -1,0 +1,9 @@
+PULSEP﻿AY AI — REDESIGNED LIGHT THEME
+
+This is the redesigned copy. To avoid opening the old app by mistake:
+1. Double-click START_REDESIGNED_FRONTEND.bat in this folder.
+2. It serves the front-end subfolder on port 5501.
+3. Open http://127.0.0.1:5501/index.html#overview
+
+If the browser still shows the old dark theme, check that the URL contains :5501 (not :5500).
+The original project is not overwritten.

@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-error": "#ffffff", "inverse-primary": "#c3c0ff", "surface-tint": "#5148d7", "surface-bright": "#faf8ff", "secondary": "#00687a", "primary-container": "#4338ca", "outline": "#777586", "on-surface-variant": "#464554", "on-primary-container": "#c1beff", "tertiary-fixed-dim": "#4edea3", "background": "#faf8ff", "tertiary-container": "#005e3f", "on-error-container": "#93000a", "tertiary-fixed": "#6ffbbe", "surface-variant": "#dae2fd", "secondary-fixed-dim": "#4cd7f6", "inverse-on-surface": "#eef0ff", "primary-fixed-dim": "#c3c0ff", "on-tertiary": "#ffffff", "on-surface": "#131b2e", "on-secondary-container": "#006172", "tertiary": "#00442d", "on-primary-fixed": "#100069", "surface-container-low": "#f2f3ff", "error": "#ba1a1a", "on-tertiary-fixed-variant": "#005236", "surface-dim": "#d2d9f4", "on-tertiary-fixed": "#002113", "on-tertiary-container": "#4ddda2", "error-container": "#ffdad6", "surface-container-high": "#e2e7ff", "on-primary": "#ffffff", "surface-container-highest": "#dae2fd", "surface-container-lowest": "#ffffff", "secondary-container": "#57dffe", "secondary-fixed": "#acedff", "on-secondary-fixed": "#001f26", "surface-container": "#eaedff", "outline-variant": "#c7c4d7", "on-background": "#131b2e", "inverse-surface": "#283044", "on-secondary-fixed-variant": "#004e5c", "surface": "#faf8ff", "on-secondary": "#ffffff", "primary-fixed": "#e3dfff", "on-primary-fixed-variant": "#372abf", "primary": "#2a14b4" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-sm": "0.5rem", "gutter": "1rem", "space-md": "0.75rem", "space-xs": "0.25rem", "space-xl": "2rem", "gutter-lg": "1.5rem", "margin-md": "1.5rem", "margin-lg": "2.5rem", "margin": "1rem", "space-lg": "1.25rem" }, "fontFamily": { "body-md": ["Geist"], "display-sm": ["Space Grotesk"], "headline-sm": ["Space Grotesk"], "mono-metric": ["Geist"], "body-sm": ["Geist"], "label-md": ["Geist"], "headline-lg": ["Space Grotesk"], "display-lg": ["Space Grotesk"], "body-lg": ["Geist"], "label-sm": ["Geist"] }, "fontSize": { "body-md": ["0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "-0.005em", "fontWeight": "400" }], "display-sm": ["2.25rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.03em", "fontWeight": "600" }], "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "mono-metric": ["1.5rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-sm": ["0.75rem", { "lineHeight": "1.125rem", "letterSpacing": "0em", "fontWeight": "400" }], "label-md": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-lg": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "display-lg": ["3.5rem", { "lineHeight": "3.75rem", "letterSpacing": "-0.04em", "fontWeight": "700" }], "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "400" }], "label-sm": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.06em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest flex flex-col z-50 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary font-headline-sm text-headline-sm">P</div><div><div class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface flex items-center gap-space-xs">PulsePay<span class="text-primary font-bold">AI</span></div><div class="font-label-sm text-label-sm uppercase tracking-wider text-outline">v2.5 Release</div></div></div></div><nav class="flex-1 px-gutter py-space-md space-y-1 overflow-y-auto" data-active-classes="bg-primary-container text-on-primary font-medium rounded-lg"><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="overview" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Overview</span></div></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="my-invoices" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span>My Invoices</span></div><span class="font-label-sm text-label-sm bg-surface-container text-on-surface px-space-xs py-0.5 rounded-lg">18</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="create-invoice" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">add_circle</span><span>Create Invoice</span></div></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="ai-payment-insights" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">auto_awesome</span><span>AI Payment Insights</span></div><span class="font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed-variant font-bold px-space-xs py-0.5 rounded-lg">AI</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="client-payment-history" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">history</span><span>Client Payment History</span></div></a><a aria-current="page" class="group flex items-center justify-between px-space-md py-space-sm transition-colors bg-primary-container text-on-primary font-medium rounded-lg" data-path="payment-follow-ups" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">forward_to_inbox</span><span>Payment Follow-ups</span></div></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="paypal-payments" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">payments</span><span>PayPal Payments</span></div><span class="font-label-sm text-label-sm bg-surface-container text-on-surface px-space-xs py-0.5 rounded-lg">Sandbox</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="settings" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></div></a></nav><div class="p-gutter bg-surface-container-low space-y-space-md"><div class="flex items-center justify-between px-space-sm py-space-xs bg-surface-container-lowest rounded-lg"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface">127.0.0.1:8001</span></div><span class="font-label-sm text-label-sm text-tertiary-container font-semibold uppercase">Live</span></div><div class="flex items-center gap-space-md"><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="min-w-0 flex-1"><div class="font-label-md text-label-md font-semibold text-on-surface truncate">Alex Rivers</div><div class="font-body-sm text-body-sm text-on-surface-variant truncate">Freelance Pro Tier</div></div><button class="text-outline hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[18px]">more_vert</span></button></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter-lg flex items-center justify-between gap-gutter"><div class="flex items-center gap-gutter"><div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant"><span class="hover:text-on-surface cursor-pointer">Home</span><span class="text-outline">/</span><span class="hover:text-on-surface cursor-pointer">Payment Command Center</span><span class="text-outline">/</span><span class="text-on-surface font-semibold">Payment Follow-ups</span></div><div class="flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span>Sandbox Live</span></div></div><div class="flex items-center gap-space-md flex-1 max-w-md justify-end"><div class="relative w-full max-w-xs"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full h-9 pl-9 pr-3 rounded-lg bg-surface-container-lowest font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-[0_1px_4px_rgba(0,0,0,0.02)]" placeholder="Search transactions, invoices..." type="text"/></div><div class="flex items-center gap-space-xs"><button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" title="Refresh" type="button"><span class="material-symbols-outlined text-[20px]">refresh</span></button><button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface relative transition-colors" title="Notifications" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-xs"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full" id="paymentFollowups">
+<div class="p-margin-lg space-y-gutter-lg max-w-[1720px] mx-auto w-full">
+<!-- Header & Autonomous Engine Control Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-gutter bg-surface-container-lowest p-gutter-lg rounded-xl shadow-sm">
+<div class="space-y-space-xs max-w-3xl">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+            AUTONOMOUS CHASE ENGINE / v2.5
+          </span>
+<span class="font-body-sm text-body-sm text-outline flex items-center gap-1">
+<span class="w-1 h-1 rounded-full bg-tertiary-fixed-dim"></span>
+            98.2% Response Recovery Rate
+          </span>
+<span class="font-body-sm text-body-sm text-outline flex items-center gap-1">
+<span class="w-1 h-1 rounded-full bg-secondary-fixed-dim"></span>
+            SQLite WAL Active
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-semibold">
+          Smart Payment Follow-ups &amp; AI Reminders
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Autonomous multi-channel escalation, predictive client tone calibration, and scheduled recovery sequences for overdue &amp; pending freelance invoices.
+        </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="px-space-md py-space-sm bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md rounded-lg flex items-center gap-space-xs transition-colors shadow-sm" onclick="analyzeInvoice('BATCH_DISPATCH')" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">tune</span>
+<span>Escalation Rules</span>
+</button>
+<button class="px-space-md py-space-sm bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md rounded-lg flex items-center gap-space-xs transition-colors shadow-sm" onclick="viewInvoiceFollowups('AUDIT_LOG')" type="button">
+<span class="material-symbols-outlined text-[18px] text-outline">history_edu</span>
+<span>Follow-up Audit Log</span>
+</button>
+<button class="px-space-md py-space-sm bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md rounded-lg flex items-center gap-space-xs transition-colors shadow-md" onclick="getPersonalizedReminder('BULK_DISPATCH')" type="button">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span>Bulk AI Dispatch (3 Pending)</span>
+</button>
+</div>
+</div>
+<!-- 4 High Density Telemetry KPI Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-gutter rounded-xl shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="space-y-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Active Follow-up Sequences</span>
+<div class="font-display-sm text-display-sm text-on-surface font-semibold tracking-tight">7 Invoices</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">outgoing_mail</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>₹3,77,500 active chase</span>
+<span class="font-label-sm text-label-sm font-semibold text-primary">3 Gentle • 3 Firm • 1 Urgent</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-gutter rounded-xl shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="space-y-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Avg Recovery Velocity</span>
+<div class="font-display-sm text-display-sm text-on-surface font-semibold tracking-tight">2.4 Days</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-tertiary-container">
+<span class="material-symbols-outlined text-[22px]">speed</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Settled 4.6d faster</span>
+<span class="font-label-sm text-label-sm font-semibold text-tertiary-container">⚡ 66% manual delta</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-gutter rounded-xl shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="space-y-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Automated Recovery Rate</span>
+<div class="font-display-sm text-display-sm text-on-surface font-semibold tracking-tight">91.8%</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">check_circle</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>14/15 settled in &lt;48h</span>
+<span class="font-label-sm text-label-sm font-semibold text-secondary">Step 2 Efficacy</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-gutter rounded-xl shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="space-y-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Spam Prevention Score</span>
+<div class="font-display-sm text-display-sm text-on-surface font-semibold tracking-tight">100% Safe</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">verified_user</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>Capped: 1 msg / 48 hrs</span>
+<span class="font-label-sm text-label-sm font-semibold text-outline">Smart Cadence</span>
+</div>
+</div>
+</div>
+<!-- Main Split-Pane Workspace -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-start">
+<!-- Left Column (8 of 12 cols): Follow-up Queue & Stream -->
+<div class="lg:col-span-7 xl:col-span-8 space-y-space-md min-w-0">
+<!-- Toolbar & Filter Tabs -->
+<div class="bg-surface-container-lowest p-gutter rounded-xl shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-wrap items-center gap-space-xs" id="filterButtonGroup">
+<button class="px-space-md py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md transition-colors" data-filter="all" type="button">
+              All (7)
+            </button>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors" data-filter="overdue" type="button">
+              Overdue Escalation (3)
+            </button>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors" data-filter="pre-due" type="button">
+              Pre-Due Nudge (3)
+            </button>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors" data-filter="milestone" type="button">
+              Milestone Check (1)
+            </button>
+</div>
+<div class="relative w-full md:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full h-9 pl-9 pr-3 rounded-lg bg-surface-container-low font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary transition-colors" placeholder="Filter client or ID..." type="text"/>
+</div>
+</div>
+<!-- Follow-up Items Container -->
+<div class="space-y-space-md">
+<!-- Item 1: Selected / Overdue Escalation -->
+<div class="bg-surface-container-lowest p-gutter rounded-xl shadow-md relative overflow-hidden transition-all group cursor-pointer hover:shadow-lg" onclick="selectInvoiceCard('INV-2024-003', 'Hyperion Global Inc.', '₹95,000', 12, 'High', 78, 3, 'Firm Notice + Late Fee Advisory')">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-error"></div>
+<div class="pl-2 flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">#INV-2024-003</span>
+<span class="text-outline">•</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Hyperion Global Inc.</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">(San Francisco, CA)</span>
+<span class="px-space-xs py-0.5 bg-error-container text-on-error-container rounded font-label-sm text-label-sm font-semibold">
+                      Escalated Attention
+                    </span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                    Design Sprint Phase 4 • Contract Net-15
+                  </div>
+</div>
+<div class="text-left sm:text-right">
+<div class="font-mono-metric text-mono-metric text-on-surface font-bold">₹95,000</div>
+<div class="font-body-sm text-body-sm text-error font-medium">12 Days Past Due</div>
+</div>
+</div>
+<!-- Risk bar & step details -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm p-space-sm bg-surface-container-low rounded-lg text-on-surface-variant font-body-sm text-body-sm">
+<div>
+<div class="font-label-sm text-label-sm text-outline uppercase">Current Cadence</div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Step 3 of 4: Firm Notice</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-outline uppercase">Channel Delivery</div>
+<div class="font-label-md text-label-md text-on-surface">Email + WhatsApp (Oct 28)</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-outline uppercase">Predictive Risk Factor</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-semibold text-error">78/100 (High Risk)</span>
+<span class="material-symbols-outlined text-[16px] text-error">warning</span>
+</div>
+</div>
+</div>
+<!-- Action Status & Triggers -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pt-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">schedule</span>
+<span>Next: <strong class="text-on-surface">Final Legal Notice &amp; CC VP Finance</strong> tomorrow at 09:00 AM IST</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 bg-surface-container hover:bg-surface-container-high rounded text-on-surface font-label-md text-label-md transition-colors" onclick="event.stopPropagation(); analyzeInvoice('INV-2024-003');" type="button">
+                    Audit Log
+                  </button>
+<button class="px-space-sm py-1 bg-primary text-on-primary rounded font-label-md text-label-md hover:bg-primary-container transition-colors flex items-center gap-1" onclick="event.stopPropagation(); getPersonalizedReminder('INV-2024-003');" type="button">
+<span class="material-symbols-outlined text-[16px]">send</span>
+<span>Dispatch Now</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2: Overdue - Step 2 -->
+<div class="bg-surface-container-lowest p-gutter rounded-xl shadow-sm relative overflow-hidden transition-all group cursor-pointer hover:shadow-md" onclick="selectInvoiceCard('INV-2024-006', 'Apex Digital Studio', '₹1,50,000', 6, 'Medium', 46, 2, 'Gentle Reminder + PayPal Link')">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary-container"></div>
+<div class="pl-2 flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">#INV-2024-006</span>
+<span class="text-outline">•</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Apex Digital Studio</span>
+<span class="px-space-xs py-0.5 bg-secondary-fixed text-on-secondary-fixed rounded font-label-sm text-label-sm font-semibold">
+                      Awaiting Response
+                    </span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                    Full Stack App Refactor • Milestone 1
+                  </div>
+</div>
+<div class="text-left sm:text-right">
+<div class="font-mono-metric text-mono-metric text-on-surface font-bold">₹1,50,000</div>
+<div class="font-body-sm text-body-sm text-secondary font-medium">6 Days Past Due</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm p-space-sm bg-surface-container-low rounded-lg text-on-surface-variant font-body-sm text-body-sm">
+<div>
+<div class="font-label-sm text-label-sm text-outline uppercase">Current Cadence</div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Step 2: PayPal 1-Click Pay Link</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-outline uppercase">Engagement telemetry</div>
+<div class="font-label-md text-label-md text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">visibility</span>
+<span>Opened 3x by Accounts Payable</span>
+</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-outline uppercase">Predictive Risk Factor</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">46/100 (Medium Risk)</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pt-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-outline">schedule</span>
+<span>Next autonomous check scheduled: <strong class="text-on-surface">In 22 hours</strong></span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 bg-surface-container hover:bg-surface-container-high rounded text-on-surface font-label-md text-label-md transition-colors" onclick="event.stopPropagation(); viewInvoiceFollowups('INV-2024-006');" type="button">
+                    History
+                  </button>
+<button class="px-space-sm py-1 bg-surface-container-high text-on-surface rounded font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-colors flex items-center gap-1" onclick="event.stopPropagation(); getPersonalizedReminder('INV-2024-006');" type="button">
+<span>Adjust Tone</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 3: Pre-Due Smart Nudge -->
+<div class="bg-surface-container-lowest p-gutter rounded-xl shadow-sm relative overflow-hidden transition-all group cursor-pointer hover:shadow-md" onclick="selectInvoiceCard('INV-2024-002', 'Nexus Labs Inc.', '₹1,85,000', -3, 'Low', 24, 1, 'Pre-Due Deliverable Sign-off')">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+<div class="pl-2 flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">#INV-2024-002</span>
+<span class="text-outline">•</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Nexus Labs Inc.</span>
+<span class="px-space-xs py-0.5 bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold rounded">
+                      Pre-Due Courtesy
+                    </span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                    AI Data Pipeline Infrastructure • Net-30
+                  </div>
+</div>
+<div class="text-left sm:text-right">
+<div class="font-mono-metric text-mono-metric text-on-surface font-bold">₹1,85,000</div>
+<div class="font-body-sm text-body-sm text-primary font-medium">Due in 3 Days (Nov 04)</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm p-space-sm bg-surface-container-low rounded-lg text-on-surface-variant font-body-sm text-body-sm">
+<div>
+<div class="font-label-sm text-label-sm text-outline uppercase">Current Cadence</div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Step 1: Sign-off &amp; AP Verification</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-outline uppercase">Client Reliability</div>
+<div class="font-label-md text-label-md text-tertiary-container font-semibold">Historical 98% on-time</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-outline uppercase">Predictive Risk Factor</div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">24/100 (Safe Tier)</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pt-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-tertiary">check_circle</span>
+<span>Deliverables confirmed received • Zero disputed items</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 bg-surface-container hover:bg-surface-container-high rounded text-on-surface font-label-md text-label-md transition-colors" onclick="event.stopPropagation(); analyzeInvoice('INV-2024-002');" type="button">
+                    Preview Nudge
+                  </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 4: Milestone Pending -->
+<div class="bg-surface-container-lowest p-gutter rounded-xl shadow-sm relative overflow-hidden transition-all group cursor-pointer hover:shadow-md" onclick="selectInvoiceCard('INV-2024-004', 'Horizon Media Ltd.', '₹2,40,000', 0, 'Low', 18, 1, 'Milestone 2 Deliverable Verification')">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-tertiary-fixed-dim"></div>
+<div class="pl-2 flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">#INV-2024-004</span>
+<span class="text-outline">•</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Horizon Media Ltd.</span>
+<span class="px-space-xs py-0.5 bg-surface-container-low text-tertiary-container font-label-sm text-label-sm font-semibold rounded">
+                      Milestone Nudge
+                    </span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                    Q4 Production Campaign Sprint
+                  </div>
+</div>
+<div class="text-left sm:text-right">
+<div class="font-mono-metric text-mono-metric text-on-surface font-bold">₹2,40,000</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant font-medium">Milestone Approval Check</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm p-space-sm bg-surface-container-low rounded-lg text-on-surface-variant font-body-sm text-body-sm">
+<div>
+<div class="font-label-sm text-label-sm text-outline uppercase">Current Cadence</div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">Payment Release Prompt</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-outline uppercase">Escalation State</div>
+<div class="font-label-md text-label-md text-on-surface">Staged for PM Sign-off</div>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-outline uppercase">Predictive Risk Factor</div>
+<div class="font-label-md text-label-md text-on-surface font-semibold">18/100 (Optimal)</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pt-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">auto_awesome</span>
+<span>AI calibrated tone for creative agency partner protocol</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 bg-surface-container hover:bg-surface-container-high rounded text-on-surface font-label-md text-label-md transition-colors" onclick="event.stopPropagation(); getPersonalizedReminder('INV-2024-004');" type="button">
+                    Tune Prompt
+                  </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column (4 of 12 cols): AI Tone Calibration & Live Reminder Preview Drawer -->
+<div class="lg:col-span-5 xl:col-span-4 space-y-gutter bg-surface-container-lowest p-gutter rounded-xl shadow-sm">
+<!-- Header & Badge -->
+<div class="flex items-center justify-between pb-space-xs">
+<div>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface">
+              Personalized AI Studio
+            </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="selectedInvoiceLabel">
+              Active: #INV-2024-003 • Hyperion Global (₹95,000)
+            </p>
+</div>
+<span class="px-space-xs py-1 rounded-md bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">psychology</span>
+            Claude-3.5 FinTone
+          </span>
+</div>
+<!-- Tone Calibration Selector Tabs -->
+<div class="space-y-space-xs">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">
+            Calibrated Tone Stance
+          </label>
+<div class="grid grid-cols-3 gap-1 bg-surface-container-low p-1 rounded-lg" id="toneSelector">
+<button class="tone-btn py-1.5 px-2 rounded-md font-label-md text-label-md text-center transition-colors text-on-surface-variant hover:text-on-surface" data-tone="polite" onclick="setTone('polite')" type="button">
+              Friendly
+            </button>
+<button class="tone-btn py-1.5 px-2 rounded-md font-label-md text-label-md text-center bg-primary text-on-primary font-semibold shadow-sm transition-colors" data-tone="firm" onclick="setTone('firm')" type="button">
+              Firm &amp; Pro
+            </button>
+<button class="tone-btn py-1.5 px-2 rounded-md font-label-md text-label-md text-center transition-colors text-on-surface-variant hover:text-on-surface" data-tone="urgent" onclick="setTone('urgent')" type="button">
+              Urgent Notice
+            </button>
+</div>
+</div>
+<!-- Multi-Channel Delivery Selector -->
+<div class="space-y-space-xs">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">
+            Dispatch Channels
+          </label>
+<div class="flex items-center gap-space-xs">
+<button class="channel-chip flex-1 py-1.5 px-space-xs rounded-lg font-label-sm text-label-sm flex items-center justify-center gap-1.5 bg-surface-container-high text-primary font-semibold transition-colors" onclick="toggleChannel(this)" type="button">
+<span class="material-symbols-outlined text-[16px]">mail</span>
+<span>Email</span>
+</button>
+<button class="channel-chip flex-1 py-1.5 px-space-xs rounded-lg font-label-sm text-label-sm flex items-center justify-center gap-1.5 bg-surface-container-high text-primary font-semibold transition-colors" onclick="toggleChannel(this)" type="button">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+<span>WhatsApp</span>
+</button>
+<button class="channel-chip flex-1 py-1.5 px-space-xs rounded-lg font-label-sm text-label-sm flex items-center justify-center gap-1.5 bg-surface-container text-on-surface-variant transition-colors" onclick="toggleChannel(this)" type="button">
+<span class="material-symbols-outlined text-[16px]">sms</span>
+<span>SMS Alert</span>
+</button>
+</div>
+</div>
+<!-- Live Reminder Message Preview -->
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">
+              Live Composed Preview
+            </label>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Ready for instant dispatch</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl space-y-space-md shadow-inner">
+<!-- Header Subject -->
+<div class="border-b border-surface-container pb-space-xs">
+<div class="font-label-sm text-label-sm text-outline">Subject:</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface" id="previewSubject">
+                Overdue Notice: Invoice #INV-2024-003 (₹95,000) for UI/UX Design System
+              </div>
+</div>
+<!-- Email Body Content -->
+<div class="font-body-sm text-body-sm text-on-surface space-y-space-sm leading-relaxed" id="previewBody">
+<p>Hi Alex &amp; Hyperion Finance Team,</p>
+<p>
+                We hope you are having a productive week. This is a gentle follow-up regarding invoice <strong>#INV-2024-003</strong> for the agreed milestone (UI/UX Design System &amp; Component Kit), which reached its payment term 12 days ago on October 18, 2024.
+              </p>
+<p>
+                The outstanding balance is <strong>₹95,000</strong>. Per our standard Net-15 agreement, invoices past 14 days incur standard monthly administrative interest. You can instantly clear this balance using our verified PayPal sandbox checkout link:
+              </p>
+</div>
+<!-- Interactive PayPal Instant Pay Module Preview -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">1-Click Settlement Sandbox</span>
+<span class="font-label-sm text-label-sm text-outline">ID: INV-2024-003</span>
+</div>
+<a class="w-full py-2 bg-[#ffc439] hover:bg-[#f2ba32] text-[#003087] font-label-md text-label-md font-bold rounded-lg flex items-center justify-center gap-space-xs transition-colors shadow-sm" href="https://sandbox.paypal.com/checkout/pay?inv=INV-2024-003" rel="noopener noreferrer" target="_blank">
+<span class="font-headline-sm text-headline-sm italic font-extrabold tracking-tighter">P</span>
+<span>Pay ₹95,000 via PayPal Sandbox</span>
+</a>
+<div class="text-center font-body-sm text-body-sm text-outline">
+                Instant webhook receipt &amp; automated ledger reconciliation.
+              </div>
+</div>
+</div>
+</div>
+<!-- AI Personalization Reasoning Banner -->
+<div class="p-space-sm bg-primary-fixed/30 rounded-lg flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0 mt-0.5">psychology_alt</span>
+<div class="space-y-0.5">
+<div class="font-label-sm text-label-sm font-semibold text-on-surface">AI Timing Insight</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+              Hyperion AP historically clears 84% of payouts on Friday afternoons between 2:30 PM &amp; 4:00 PM EST. Next automated dispatch matches this window.
+            </div>
+</div>
+</div>
+<!-- Action Drawer Buttons -->
+<div class="space-y-space-xs pt-space-xs">
+<button class="w-full py-2.5 bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold rounded-lg flex items-center justify-center gap-space-xs transition-colors shadow-md" onclick="getPersonalizedReminder('INV-2024-003')" type="button">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Send Personalized Reminder Now</span>
+</button>
+<div class="flex items-center gap-space-xs">
+<button class="flex-1 py-2 bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md rounded-lg flex items-center justify-center gap-1 transition-colors" onclick="savePaymentFollowup('SCHEDULE')" type="button">
+<span class="material-symbols-outlined text-[16px] text-outline">calendar_clock</span>
+<span>Schedule Dispatch</span>
+</button>
+<button class="py-2 px-space-md text-primary hover:text-primary-container font-label-md text-label-md rounded-lg flex items-center gap-1 transition-colors" onclick="savePaymentFollowup('TEMPLATE')" type="button">
+<span class="material-symbols-outlined text-[16px]">bookmark_add</span>
+<span>Save Template</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Activity & Autonomous AI Chase Workflow Matrix -->
+<div class="bg-surface-container-lowest p-gutter-lg rounded-xl shadow-sm space-y-gutter">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">
+            PulsePay Autonomous Chase Protocol (Net-15 / Net-30 Engine)
+          </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Deterministic state machine calibrated to prevent spam while maximizing collection probability.
+          </p>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-outline">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<span>4 Autonomous Stages Active</span>
+</div>
+</div>
+<!-- 4 Step Workflow Visualization Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-gutter">
+<!-- Step 1 -->
+<div class="bg-surface-container-low p-gutter rounded-xl space-y-space-sm relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="px-space-xs py-0.5 bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold rounded">STAGE 01</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">T - 3 Days</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Cordial Delivery Confirmation</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Pre-due courteous check-in. Inquires if AP has everything needed to process payment on schedule.
+          </p>
+<div class="pt-space-xs flex items-center gap-1 font-label-sm text-label-sm text-outline">
+<span class="material-symbols-outlined text-[16px]">mark_email_read</span>
+<span>Zero pressure • AP validation</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-container-low p-gutter rounded-xl space-y-space-sm relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="px-space-xs py-0.5 bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold rounded">STAGE 02</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">T + 2 Days</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Gentle 1-Click Pay Reminder</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Sends friendly reminder including the itemized statement and direct PayPal Sandbox zero-friction settlement link.
+          </p>
+<div class="pt-space-xs flex items-center gap-1 font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+<span>68% of overdue resolved here</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-container-low p-gutter rounded-xl space-y-space-sm relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="px-space-xs py-0.5 bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold rounded">STAGE 03</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">T + 7 Days</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Firm Notice &amp; Finance CC</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Assertive follow-up referencing contractual payment clauses, impending interest fees, and CC'ing department heads.
+          </p>
+<div class="pt-space-xs flex items-center gap-1 font-label-sm text-label-sm text-outline">
+<span class="material-symbols-outlined text-[16px]">campaign</span>
+<span>Multi-channel (Email + WhatsApp)</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="bg-surface-container-low p-gutter rounded-xl space-y-space-sm relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="px-space-xs py-0.5 bg-error-container text-on-error-container font-label-sm text-label-sm font-bold rounded">STAGE 04</span>
+<span class="font-label-sm text-label-sm text-error font-semibold">T + 14 Days</span>
+</div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Contractual Demand &amp; Freeze</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Formal legal escalation draft, active server license hold notice, and interest compounding calculations appended.
+          </p>
+<div class="pt-space-xs flex items-center gap-1 font-label-sm text-label-sm text-error">
+<span class="material-symbols-outlined text-[16px]">gavel</span>
+<span>Legal dispatch template ready</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Preserved JavaScript hooks and interactive behaviors
+  function getPersonalizedReminder(invoiceId) {
+    const id = invoiceId || 'INV-2024-003';
+    const toast = document.createElement('div');
+    toast.className = 'fixed bottom-6 right-6 bg-primary text-on-primary px-space-lg py-space-md rounded-xl shadow-xl z-50 flex items-center gap-space-sm animate-bounce';
+    toast.innerHTML = `<span class="material-symbols-outlined">send</span><span>AI Reminder successfully dispatched for ${id}!</span>`;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3400);
+  }
+
+  function savePaymentFollowup(actionType) {
+    const action = actionType || 'SAVE';
+    const toast = document.createElement('div');
+    toast.className = 'fixed bottom-6 right-6 bg-surface-container-lowest text-on-surface px-space-lg py-space-md rounded-xl shadow-xl z-50 flex items-center gap-space-sm border-l-4 border-primary';
+    toast.innerHTML = `<span class="material-symbols-outlined text-primary">bookmark</span><span>Action '${action}' applied to autonomous schedule.</span>`;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3200);
+  }
+
+  function viewInvoiceFollowups(invoiceId) {
+    const id = invoiceId || 'CURRENT';
+    const toast = document.createElement('div');
+    toast.className = 'fixed bottom-6 right-6 bg-surface-container-lowest text-on-surface px-space-lg py-space-md rounded-xl shadow-xl z-50 flex items-center gap-space-sm border-l-4 border-secondary';
+    toast.innerHTML = `<span class="material-symbols-outlined text-secondary">history</span><span>Loading comprehensive follow-up telemetry for ${id}...</span>`;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 2800);
+  }
+
+  function analyzeInvoice(invoiceId) {
+    const id = invoiceId || 'INV-2024-003';
+    const toast = document.createElement('div');
+    toast.className = 'fixed bottom-6 right-6 bg-surface-container-lowest text-on-surface px-space-lg py-space-md rounded-xl shadow-xl z-50 flex items-center gap-space-sm border-l-4 border-tertiary-container';
+    toast.innerHTML = `<span class="material-symbols-outlined text-tertiary">analytics</span><span>Executing Claude-3.5 Tone & Risk telemetry for ${id}...</span>`;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+  }
+
+  // Tone Switcher interaction
+  function setTone(tone) {
+    const buttons = document.querySelectorAll('.tone-btn');
+    buttons.forEach(btn => {
+      btn.className = 'tone-btn py-1.5 px-2 rounded-md font-label-md text-label-md text-center transition-colors text-on-surface-variant hover:text-on-surface';
+    });
+
+    const activeBtn = document.querySelector(`.tone-btn[data-tone="${tone}"]`);
+    if (activeBtn) {
+      activeBtn.className = 'tone-btn py-1.5 px-2 rounded-md font-label-md text-label-md text-center bg-primary text-on-primary font-semibold shadow-sm transition-colors';
+    }
+
+    const previewSubject = document.getElementById('previewSubject');
+    const previewBody = document.getElementById('previewBody');
+
+    if (tone === 'polite') {
+      previewSubject.textContent = 'Friendly Update: Invoice #INV-2024-003 status check';
+      previewBody.innerHTML = `
+        <p>Hi Alex &amp; Hyperion Team,</p>
+        <p>Hope you're having a wonderful week! Just doing a quick courtesy check on invoice <strong>#INV-2024-003</strong> (₹95,000) for the design deliverable. Let us know if your AP team requires any tax documents or W-9 verification.</p>
+        <p>Feel free to clear via our PayPal Sandbox portal at your earliest convenience:</p>
+      `;
+    } else if (tone === 'urgent') {
+      previewSubject.textContent = 'URGENT: Legal Payment Notice - Past Due Invoice #INV-2024-003 (₹95,000)';
+      previewBody.innerHTML = `
+        <p>Attention: Accounts Payable &amp; Executive Finance,</p>
+        <p>Invoice <strong>#INV-2024-003</strong> for ₹95,000 is now <strong>12 days overdue</strong>. Under Article 4 of our Master Services Agreement, accounts over 14 days incur late penalties and suspension of project repository access.</p>
+        <p>Immediate settlement is required via the registered PayPal Sandbox channel below to prevent automated legal hold:</p>
+      `;
+    } else {
+      previewSubject.textContent = 'Overdue Notice: Invoice #INV-2024-003 (₹95,000) for UI/UX Design System';
+      previewBody.innerHTML = `
+        <p>Hi Alex &amp; Hyperion Finance Team,</p>
+        <p>This is a gentle follow-up regarding invoice <strong>#INV-2024-003</strong> for the agreed milestone (UI/UX Design System), which reached its payment term 12 days ago on October 18, 2024.</p>
+        <p>The outstanding balance is <strong>₹95,000</strong>. Per our standard Net-15 agreement, you can instantly clear this balance using our verified PayPal sandbox checkout link:</p>
+      `;
+    }
+  }
+
+  // Channel toggle interaction
+  function toggleChannel(button) {
+    const isSelected = button.classList.contains('bg-surface-container-high');
+    if (isSelected) {
+      button.classList.remove('bg-surface-container-high', 'text-primary');
+      button.classList.add('bg-surface-container', 'text-on-surface-variant');
+    } else {
+      button.classList.remove('bg-surface-container', 'text-on-surface-variant');
+      button.classList.add('bg-surface-container-high', 'text-primary');
+    }
+  }
+
+  // Invoice Card Selection
+  function selectInvoiceCard(invId, client, amount, daysOverdue, riskTier, riskScore, step, stepDesc) {
+    const label = document.getElementById('selectedInvoiceLabel');
+    if (label) {
+      label.textContent = `Active: #${invId} • ${client} (${amount})`;
+    }
+    const previewSubject = document.getElementById('previewSubject');
+    if (previewSubject) {
+      previewSubject.textContent = `Follow-up: Invoice #${invId} (${amount}) - ${client}`;
+    }
+  }
+</script></main></div></body></html>

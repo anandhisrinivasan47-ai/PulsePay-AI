@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-error": "#ffffff", "inverse-primary": "#c3c0ff", "surface-tint": "#5148d7", "surface-bright": "#faf8ff", "secondary": "#00687a", "primary-container": "#4338ca", "outline": "#777586", "on-surface-variant": "#464554", "on-primary-container": "#c1beff", "tertiary-fixed-dim": "#4edea3", "background": "#faf8ff", "tertiary-container": "#005e3f", "on-error-container": "#93000a", "tertiary-fixed": "#6ffbbe", "surface-variant": "#dae2fd", "secondary-fixed-dim": "#4cd7f6", "inverse-on-surface": "#eef0ff", "primary-fixed-dim": "#c3c0ff", "on-tertiary": "#ffffff", "on-surface": "#131b2e", "on-secondary-container": "#006172", "tertiary": "#00442d", "on-primary-fixed": "#100069", "surface-container-low": "#f2f3ff", "error": "#ba1a1a", "on-tertiary-fixed-variant": "#005236", "surface-dim": "#d2d9f4", "on-tertiary-fixed": "#002113", "on-tertiary-container": "#4ddda2", "error-container": "#ffdad6", "surface-container-high": "#e2e7ff", "on-primary": "#ffffff", "surface-container-highest": "#dae2fd", "surface-container-lowest": "#ffffff", "secondary-container": "#57dffe", "secondary-fixed": "#acedff", "on-secondary-fixed": "#001f26", "surface-container": "#eaedff", "outline-variant": "#c7c4d7", "on-background": "#131b2e", "inverse-surface": "#283044", "on-secondary-fixed-variant": "#004e5c", "surface": "#faf8ff", "on-secondary": "#ffffff", "primary-fixed": "#e3dfff", "on-primary-fixed-variant": "#372abf", "primary": "#2a14b4" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-sm": "0.5rem", "gutter": "1rem", "space-md": "0.75rem", "space-xs": "0.25rem", "space-xl": "2rem", "gutter-lg": "1.5rem", "margin-md": "1.5rem", "margin-lg": "2.5rem", "margin": "1rem", "space-lg": "1.25rem" }, "fontFamily": { "body-md": ["Geist"], "display-sm": ["Space Grotesk"], "headline-sm": ["Space Grotesk"], "mono-metric": ["Geist"], "body-sm": ["Geist"], "label-md": ["Geist"], "headline-lg": ["Space Grotesk"], "display-lg": ["Space Grotesk"], "body-lg": ["Geist"], "label-sm": ["Geist"] }, "fontSize": { "body-md": ["0.875rem", { "lineHeight": "1.375rem", "letterSpacing": "-0.005em", "fontWeight": "400" }], "display-sm": ["2.25rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.03em", "fontWeight": "600" }], "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "mono-metric": ["1.5rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-sm": ["0.75rem", { "lineHeight": "1.125rem", "letterSpacing": "0em", "fontWeight": "400" }], "label-md": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-lg": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "600" }], "display-lg": ["3.5rem", { "lineHeight": "3.75rem", "letterSpacing": "-0.04em", "fontWeight": "700" }], "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "400" }], "label-sm": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.06em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest flex flex-col z-50 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary font-headline-sm text-headline-sm">P</div><div><div class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface flex items-center gap-space-xs">PulsePay<span class="text-primary font-bold">AI</span></div><div class="font-label-sm text-label-sm uppercase tracking-wider text-outline">v2.5 Release</div></div></div></div><nav class="flex-1 px-gutter py-space-md space-y-1 overflow-y-auto" data-active-classes="bg-primary text-on-primary font-medium rounded-lg shadow-sm"><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="overview" href="#"><span>Overview</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="my-invoices" href="#"><span>My Invoices</span><span class="font-label-sm text-label-sm bg-surface-container text-on-surface px-space-xs py-0.5 rounded-lg">18</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="create-invoice" href="#"><span>Create Invoice</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="ai-payment-insights" href="#"><span>AI Payment Insights</span><span class="font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed-variant font-bold px-space-xs py-0.5 rounded-lg">AI</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="client-payment-history" href="#"><span>Client Payment History</span><span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="payment-follow-ups" href="#"><span>Payment Follow-ups</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="paypal-payments" href="#"><span>PayPal Payments</span><span class="font-label-sm text-label-sm bg-surface-container text-on-surface px-space-xs py-0.5 rounded-lg">Sandbox</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" data-path="settings" href="#"><span>Settings</span></a></nav><div class="p-gutter bg-surface-container-low space-y-space-md"><div class="flex items-center justify-between px-space-sm py-space-xs bg-surface-container-lowest rounded-lg"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface">127.0.0.1:8001</span></div><span class="font-label-sm text-label-sm text-tertiary-container font-semibold uppercase">FastAPI Live</span></div><div class="flex items-center gap-space-md"><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="min-w-0 flex-1"><div class="font-label-md text-label-md font-semibold text-on-surface truncate">Alex Rivers</div><div class="font-body-sm text-body-sm text-on-surface-variant truncate">Freelance Pro Tier</div></div><button class="text-outline hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[18px]">more_vert</span></button></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter-lg flex items-center justify-between gap-gutter"><div class="flex items-center gap-gutter"><div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant"><span class="hover:text-on-surface cursor-pointer">Home</span><span class="text-outline">/</span><span class="hover:text-on-surface cursor-pointer">Clients</span><span class="text-outline">/</span><span class="text-on-surface font-semibold">Payment History</span></div><div class="flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span><span>Sandbox Live</span></div></div><div class="flex items-center gap-space-md flex-1 max-w-md justify-end"><div class="relative w-full max-w-xs"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full h-9 pl-9 pr-3 rounded-lg bg-surface-container-lowest font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-[0_1px_4px_rgba(0,0,0,0.02)]" placeholder="Search transactions, invoices..." type="text"/></div><div class="flex items-center gap-space-xs"><button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" title="Refresh" type="button"><span class="material-symbols-outlined text-[20px]">refresh</span></button><button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface relative transition-colors" title="Notifications" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-xs"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Dynamic Route & Breadcrumb Synchronizer (Ensures Shell Sidebar reflects 'Settings' active state) -->
+<script>
+    (function() {
+      // Highlight "Settings" in the persistent sidebar
+      const navLinks = document.querySelectorAll('aside nav a');
+      navLinks.forEach(link => {
+        if (link.getAttribute('data-path') === 'settings' || link.innerText.includes('Settings')) {
+          link.className = 'group flex items-center justify-between px-space-md py-space-sm rounded-lg font-label-md text-label-md bg-primary-fixed text-primary font-semibold shadow-sm transition-colors';
+          const dot = document.createElement('span');
+          dot.className = 'w-1.5 h-1.5 rounded-full bg-primary animate-pulse';
+          link.appendChild(dot);
+        } else {
+          link.classList.remove('bg-primary', 'text-on-primary', 'font-medium');
+        }
+      });
+      // Synchronize topbar breadcrumbs & status badge
+      const headerBreadcrumb = document.querySelector('header .font-label-sm');
+      if (headerBreadcrumb) {
+        headerBreadcrumb.innerHTML = `
+          <span class="hover:text-on-surface cursor-pointer">Home</span>
+          <span class="text-outline">/</span>
+          <span class="text-on-surface font-semibold">Settings &amp; API Credentials</span>
+        `;
+      }
+      const headerPill = document.querySelector('header .bg-secondary-fixed');
+      if (headerPill) {
+        headerPill.innerHTML = `
+          <span class="w-1.5 h-1.5 rounded-full bg-tertiary-container animate-pulse"></span>
+          <span class="font-label-sm text-label-sm text-on-secondary-fixed font-semibold tracking-tight">Sandbox Live &bull; SQLite WAL &bull; FastAPI:8001</span>
+        `;
+      }
+    })();
+  </script>
+<!-- Main Canvas Container -->
+<div class="p-gutter-lg space-y-gutter-lg max-w-[1600px] mx-auto w-full">
+<!-- Section 1: Header with High-Velocity Actions -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-gutter bg-surface-container-lowest p-margin-md rounded-xl shadow-sm">
+<div class="space-y-space-xs max-w-3xl">
+<div class="flex items-center gap-space-sm">
+<span class="px-space-xs py-0.5 rounded-lg bg-primary-fixed text-primary font-label-sm text-label-sm font-semibold tracking-wider uppercase">System Config</span>
+<span class="text-outline text-label-sm font-label-sm">•</span>
+<span class="font-label-sm text-label-sm text-tertiary font-medium flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span> Node Engine Operational
+          </span>
+</div>
+<h1 class="font-display-sm text-display-sm text-on-surface tracking-tight">Settings &amp; API Credentials</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Configure local FastAPI microservice endpoints, SQLite WAL database connection, PayPal Sandbox credentials, and autonomous AI risk agents.
+        </p>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="h-9 px-space-md bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md rounded-lg flex items-center gap-space-xs transition-colors shadow-sm" id="testConnectionsBtn" type="button">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-ping"></span>
+<span class="material-symbols-outlined text-[16px] text-tertiary">sensors</span>
+<span>Test All Connections</span>
+</button>
+<button class="h-9 px-space-md bg-surface-container-lowest hover:bg-surface-container-low text-on-surface font-label-md text-label-md rounded-lg flex items-center gap-space-xs transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px] text-outline">file_download</span>
+<span>Export Config (JSON)</span>
+</button>
+<button class="h-9 px-space-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md rounded-lg flex items-center gap-space-xs shadow-sm transition-colors" id="saveChangesBtn" type="button">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Save Changes</span>
+</button>
+</div>
+</div>
+<!-- Section 2: Top Diagnostics & Real-time Telemetry (4 Horizontal Micro-Metric Cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-gutter">
+<!-- Card 1: FastAPI Backend -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">FastAPI Backend</span>
+</div>
+<span class="px-space-xs py-0.5 rounded-lg bg-surface-container-low text-tertiary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span> Online
+          </span>
+</div>
+<div>
+<div class="font-mono-metric text-mono-metric text-on-surface tracking-tight">12 <span class="font-body-sm text-body-sm text-outline font-normal">ms latency</span></div>
+<div class="font-body-sm text-body-sm text-on-surface-variant flex items-center justify-between mt-space-xs">
+<span>Port: <strong class="text-on-surface font-medium">8001</strong></span>
+<span>14 Endpoints Active</span>
+</div>
+</div>
+<div class="w-full h-1 bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-fixed-dim rounded-full" style="width: 94%;"></div>
+</div>
+</div>
+<!-- Card 2: SQLite Storage WAL -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[16px]">database</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">SQLite Storage</span>
+</div>
+<span class="px-space-xs py-0.5 rounded-lg bg-surface-container-low text-secondary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> WAL Active
+          </span>
+</div>
+<div>
+<div class="font-mono-metric text-mono-metric text-on-surface tracking-tight">4.2 <span class="font-body-sm text-body-sm text-outline font-normal">MB footprint</span></div>
+<div class="font-body-sm text-body-sm text-on-surface-variant flex items-center justify-between mt-space-xs truncate">
+<span class="truncate">freelancer_ledger.db</span>
+<span class="font-label-sm text-label-sm font-medium text-on-surface">Write-Ahead</span>
+</div>
+</div>
+<div class="w-full h-1 bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed-dim rounded-full" style="width: 68%;"></div>
+</div>
+</div>
+<!-- Card 3: PayPal REST API -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[16px]">payments</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">PayPal Gateway</span>
+</div>
+<span class="px-space-xs py-0.5 rounded-lg bg-surface-container-low text-primary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Sandbox v2
+          </span>
+</div>
+<div>
+<div class="font-mono-metric text-mono-metric text-on-surface tracking-tight">5.2 <span class="font-body-sm text-body-sm text-outline font-normal">hrs token TTL</span></div>
+<div class="font-body-sm text-body-sm text-on-surface-variant flex items-center justify-between mt-space-xs">
+<span>OAuth: <strong class="text-tertiary font-medium">Valid</strong></span>
+<span>Auto-Refresh Enabled</span>
+</div>
+</div>
+<div class="w-full h-1 bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 82%;"></div>
+</div>
+</div>
+<!-- Card 4: PulsePay AI Model -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[16px]">smart_toy</span>
+</div>
+<span class="font-label-md text-label-md font-semibold text-on-surface">PulsePay AI Engine</span>
+</div>
+<span class="px-space-xs py-0.5 rounded-lg bg-primary-fixed text-primary font-label-sm text-label-sm font-semibold">v2.5 Hybrid</span>
+</div>
+<div>
+<div class="font-mono-metric text-mono-metric text-on-surface tracking-tight">140 <span class="font-body-sm text-body-sm text-outline font-normal">ms inference</span></div>
+<div class="font-body-sm text-body-sm text-on-surface-variant flex items-center justify-between mt-space-xs">
+<span class="truncate">Claude FinTone + Heuristic</span>
+<span class="font-label-sm text-label-sm font-medium text-tertiary">Unlimited</span>
+</div>
+</div>
+<div class="w-full h-1 bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+</div>
+<!-- Section 3: Horizontal Tab Navigation Bar -->
+<div class="bg-surface-container-lowest p-space-xs rounded-xl shadow-sm flex items-center overflow-x-auto gap-space-xs">
+<button class="px-space-md py-space-sm bg-primary text-on-primary rounded-lg font-label-md text-label-md font-medium shadow-sm flex items-center gap-space-xs whitespace-nowrap">
+<span class="material-symbols-outlined text-[18px]">hub</span>
+<span>API &amp; Webhooks</span>
+</button>
+<button class="px-space-md py-space-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-colors whitespace-nowrap flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+<span>PayPal Gateway Configuration</span>
+</button>
+<button class="px-space-md py-space-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-colors whitespace-nowrap flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px]">neurology</span>
+<span>Autonomous Follow-up &amp; Rules</span>
+</button>
+<button class="px-space-md py-space-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-colors whitespace-nowrap flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+<span>Freelancer Profile &amp; Tax Details</span>
+</button>
+<button class="px-space-md py-space-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-colors whitespace-nowrap flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px]">hard_drive_2</span>
+<span>Database &amp; Backup</span>
+</button>
+</div>
+<!-- Section 4: Main 2-Column Responsive Layout (68% left / 32% right) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-start">
+<!-- LEFT COLUMN: Main Settings Panels (8 of 12 cols = ~67%) -->
+<div class="lg:col-span-8 space-y-gutter-lg">
+<!-- PANEL A: FastAPI Microservice & Webhooks -->
+<div class="bg-surface-container-lowest p-margin-md rounded-xl shadow-sm space-y-space-lg">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">webhook</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">FastAPI Microservice &amp; Webhook Endpoints</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Local daemon listener configuration with secure cryptographic handshake validation.</p>
+</div>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm font-medium">Port 8001 Loopback</span>
+</div>
+<!-- Base Service URL Field -->
+<div class="space-y-space-xs">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold flex items-center justify-between">
+<span>Local Service URL</span>
+<span class="text-tertiary flex items-center gap-1 font-normal"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span> HTTP 200 OK • 12ms</span>
+</label>
+<div class="flex items-center gap-space-sm">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">dns</span>
+<input class="w-full h-10 pl-9 pr-3 rounded-lg bg-surface-container-low font-mono-metric text-body-md text-on-surface focus:outline-none focus:bg-surface-container-lowest transition-colors" type="text" value="http://127.0.0.1:8001"/>
+</div>
+<button class="h-10 px-space-md bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md rounded-lg flex items-center gap-space-xs transition-colors" id="pingBtn" type="button">
+<span class="material-symbols-outlined text-[16px]">wifi_tethering</span>
+<span>Ping Endpoint</span>
+</button>
+</div>
+</div>
+<!-- Webhook Listener Endpoint -->
+<div class="space-y-space-xs">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold flex items-center justify-between">
+<span>Public Ingress Webhook Callback (TLS 1.3 Reverse Tunnel)</span>
+<span class="text-secondary font-label-sm text-label-sm font-medium">Secured with HMAC-SHA256</span>
+</label>
+<div class="flex items-center gap-space-sm">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">lock</span>
+<input class="w-full h-10 pl-9 pr-3 rounded-lg bg-surface-container-low font-body-md text-body-md text-on-surface font-mono" readonly="" type="text" value="https://api.pulsepay.io/v2/webhook/paypal"/>
+</div>
+<button class="h-10 px-space-md bg-surface-container-lowest hover:bg-surface-container-low text-on-surface font-label-md text-label-md rounded-lg flex items-center gap-space-xs shadow-sm transition-colors" id="copyWebhookBtn" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">content_copy</span>
+<span id="copyWebhookLabel">Copy URL</span>
+</button>
+</div>
+</div>
+<!-- HMAC Signing Key -->
+<div class="space-y-space-xs">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">PayPal Webhook Secret Verification Token</label>
+<div class="flex items-center gap-space-sm">
+<div class="relative flex-1">
+<input class="w-full h-10 px-space-md rounded-lg bg-surface-container-low font-body-md text-body-md text-on-surface font-mono tracking-widest focus:outline-none focus:bg-surface-container-lowest transition-colors" id="webhookSecretInput" type="password" value="whsec_99f8a42b10a4e76d91ec088ef6a20d43c7b209e99a27"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface" id="toggleSecretEye" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+<button class="h-10 px-space-md bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md rounded-lg flex items-center gap-space-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">cycle</span>
+<span>Rotate Secret</span>
+</button>
+</div>
+</div>
+<!-- Event Subscriptions -->
+<div class="space-y-space-xs pt-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Active Webhook Events</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-1">
+<label class="flex items-center gap-space-sm p-space-sm bg-surface-container-low rounded-lg cursor-pointer hover:bg-surface-container transition-colors">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary focus:ring-offset-0" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-mono text-on-surface">CHECKOUT.ORDER.APPROVED</span>
+<span class="font-body-sm text-body-sm text-outline">Trigger instant client receipt</span>
+</div>
+</label>
+<label class="flex items-center gap-space-sm p-space-sm bg-surface-container-low rounded-lg cursor-pointer hover:bg-surface-container transition-colors">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary focus:ring-offset-0" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-mono text-on-surface">PAYMENT.CAPTURE.COMPLETED</span>
+<span class="font-body-sm text-body-sm text-outline">Write settlement to SQLite WAL</span>
+</div>
+</label>
+<label class="flex items-center gap-space-sm p-space-sm bg-surface-container-low rounded-lg cursor-pointer hover:bg-surface-container transition-colors">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary focus:ring-offset-0" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-mono text-on-surface">PAYMENT.CAPTURE.DENIED</span>
+<span class="font-body-sm text-body-sm text-outline">Activate AI recovery agent</span>
+</div>
+</label>
+<label class="flex items-center gap-space-sm p-space-sm bg-surface-container-low rounded-lg cursor-pointer hover:bg-surface-container transition-colors">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary focus:ring-offset-0" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-mono text-on-surface">CUSTOMER.DISPUTE.CREATED</span>
+<span class="font-body-sm text-body-sm text-outline">Lock invoice audit log</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- PANEL B: PayPal Sandbox API Authentication -->
+<div class="bg-surface-container-lowest p-margin-md rounded-xl shadow-sm space-y-space-lg">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">currency_exchange</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">PayPal REST Gateway API Authentication</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Credentials used by FastAPI backend to mint dynamic 1-click settlement sessions.</p>
+</div>
+</div>
+<!-- Sandbox vs Production Switch -->
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg">
+<button class="px-space-md py-1 rounded bg-secondary text-on-secondary font-label-sm text-label-sm font-semibold shadow-sm" type="button">Sandbox Mode</button>
+<button class="px-space-md py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-medium" type="button">Production</button>
+</div>
+</div>
+<!-- Credentials Form Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="space-y-space-xs">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Sandbox Client ID</label>
+<div class="relative">
+<input class="w-full h-10 px-space-md pr-10 rounded-lg bg-surface-container-low font-body-md text-body-md text-on-surface font-mono focus:outline-none focus:bg-surface-container-lowest" type="text" value="AQ8n_f792bL81Qv_mock_Ab39kxZ90qLoP"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface" title="Copy Client ID" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+</div>
+<div class="space-y-space-xs">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Sandbox Secret Key</label>
+<div class="relative">
+<input class="w-full h-10 px-space-md pr-10 rounded-lg bg-surface-container-low font-body-md text-body-md text-on-surface font-mono tracking-widest focus:outline-none focus:bg-surface-container-lowest" id="ppSecretInput" type="password" value="EPg_199849204018302_mock_secret_key_pulsepay"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface" id="ppToggleSecretEye" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</div>
+<div class="md:col-span-2 space-y-space-xs">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Sandbox Merchant Facilitator Account Email</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">mail</span>
+<input class="w-full h-10 pl-9 pr-3 rounded-lg bg-surface-container-low font-body-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container-lowest" type="email" value="sb-freelancer-payments@pulsepay.io"/>
+</div>
+</div>
+</div>
+<!-- Feature Toggle: 1-Click Settlement Links -->
+<div class="flex items-center justify-between p-space-md bg-surface-container-low rounded-lg">
+<div class="space-y-0.5 max-w-xl">
+<div class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-space-xs">
+<span>Auto-Generate 1-Click PayPal Settlement Links</span>
+<span class="px-space-xs py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">High Conversion</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Appends cryptographic deep-link to every PDF invoice and autonomous follow-up notification dispatch.</p>
+</div>
+<!-- Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Handshake Verification Bar -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pt-space-xs bg-surface-container-lowest">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">OAuth 2.0 Bearer Handshake verified: HTTP 200 OK</span>
+<span class="text-outline font-label-sm text-label-sm">•</span>
+<span class="font-label-sm text-label-sm text-outline">Scopes: `payments`, `orders`, `vault`</span>
+</div>
+<button class="h-9 px-space-md bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md rounded-lg flex items-center gap-space-xs transition-colors shadow-sm self-start sm:self-auto" id="verifyOauthBtn" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+<span>Verify OAuth Handshake</span>
+</button>
+</div>
+</div>
+<!-- PANEL C: Autonomous AI Chase & Risk Engine Preferences -->
+<div class="bg-surface-container-lowest p-margin-md rounded-xl shadow-sm space-y-space-lg">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">psychology</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Autonomous AI Chase &amp; Risk Engine Preferences</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Calibrate collection aggressiveness, late fee algorithms, and multi-channel trigger rules.</p>
+</div>
+</div>
+<span class="px-space-xs py-0.5 rounded-lg bg-primary-fixed text-primary font-label-sm text-label-sm font-semibold">Agent Policy v2.5</span>
+</div>
+<!-- Settings Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Default Payment Terms -->
+<div class="space-y-space-xs">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold flex items-center justify-between">
+<span>Default Payment Terms</span>
+<span class="text-primary font-label-sm text-label-sm font-medium">AI Recommended</span>
+</label>
+<select class="w-full h-10 px-space-md rounded-lg bg-surface-container-low font-body-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container-lowest transition-colors">
+<option selected="" value="net15">Net 15 Days (Recommended for Indian Tech SMBs)</option>
+<option value="net7">Net 7 Days (Accelerated Liquidity)</option>
+<option value="net30">Net 30 Days (Standard Enterprise)</option>
+<option value="due_receipt">Due Immediately Upon Receipt</option>
+</select>
+</div>
+<!-- Follow-up Tone -->
+<div class="space-y-space-xs">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">AI Follow-up Tone Heuristic</label>
+<select class="w-full h-10 px-space-md rounded-lg bg-surface-container-low font-body-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container-lowest transition-colors">
+<option selected="" value="firm">Firm &amp; Professional (Balanced)</option>
+<option value="collaborative">Polite &amp; Collaborative</option>
+<option value="urgent">Urgent &amp; Direct (For Late Accounts)</option>
+<option value="concierge">Executive Concierge (White-Glove)</option>
+</select>
+</div>
+</div>
+<!-- Heuristic Toggles -->
+<div class="space-y-space-sm">
+<!-- Late fee calculation -->
+<div class="flex items-center justify-between p-space-md bg-surface-container-low rounded-lg">
+<div class="space-y-0.5 max-w-xl">
+<div class="font-label-md text-label-md font-semibold text-on-surface">Compounding Late Fee Heuristic</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Automatically add 1.5% compounding fee on unpaid balances after 14 days overdue.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Anti-Spam Cadence Shield -->
+<div class="flex items-center justify-between p-space-md bg-surface-container-low rounded-lg">
+<div class="space-y-0.5 max-w-xl">
+<div class="font-label-md text-label-md font-semibold text-on-surface flex items-center gap-space-xs">
+<span>Anti-Spam Client Cadence Shield</span>
+<span class="material-symbols-outlined text-[16px] text-tertiary">lock</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Enforce a strict maximum limit of 1 autonomous nudge per client every 48 hours to preserve goodwill.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+<!-- Dispatch Channels Status Bar -->
+<div class="space-y-space-xs pt-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Active Dispatch Channels</span>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm pt-1">
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary">mail</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">Email Dispatch</span>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-lowest text-tertiary font-label-sm text-label-sm font-semibold">Active</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-tertiary">chat</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">WhatsApp Cloud</span>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-lowest text-tertiary font-label-sm text-label-sm font-semibold">Connected</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary">sms</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">SMS Gateway</span>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-lowest text-secondary font-label-sm text-label-sm font-semibold">Sandboxed</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Diagnostics, Live Telemetry & Profile Overview (4 of 12 cols = ~33%) -->
+<div class="lg:col-span-4 space-y-gutter-lg">
+<!-- Card 1: Local Environment Diagnostics -->
+<div class="bg-surface-container-lowest p-margin-md rounded-xl shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[16px]">monitor_heart</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Environment Diagnostics</h3>
+</div>
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
+</div>
+<div class="space-y-space-sm font-body-sm text-body-sm">
+<div class="flex items-center justify-between py-1 border-b border-surface-container-low">
+<span class="text-on-surface-variant">Python Runtime</span>
+<span class="font-mono text-on-surface font-medium">3.11.8 (FastAPI 0.110.0)</span>
+</div>
+<div class="flex items-center justify-between py-1 border-b border-surface-container-low">
+<span class="text-on-surface-variant">ASGI Server</span>
+<span class="font-mono text-on-surface font-medium">Uvicorn 0.28.0 Worker</span>
+</div>
+<div class="flex items-center justify-between py-1 border-b border-surface-container-low">
+<span class="text-on-surface-variant">SQLite WAL Commits</span>
+<span class="font-mono text-tertiary font-medium">1,492 tx (0 errors)</span>
+</div>
+<div class="flex items-center justify-between py-1 border-b border-surface-container-low">
+<span class="text-on-surface-variant">Memory Footprint</span>
+<span class="font-mono text-on-surface font-medium">84.2 MB RSS</span>
+</div>
+<div class="flex items-center justify-between py-1">
+<span class="text-on-surface-variant">Database Integrity</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low text-tertiary font-label-sm text-label-sm font-semibold">PRAGMA OK</span>
+</div>
+</div>
+<button class="w-full h-9 px-space-md bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md rounded-lg flex items-center justify-center gap-space-xs transition-colors" id="vacuumBtn" type="button">
+<span class="material-symbols-outlined text-[16px]">cleaning_services</span>
+<span>Force DB VACUUM &amp; Re-index</span>
+</button>
+</div>
+<!-- Card 2: Freelancer Billing Identity -->
+<div class="bg-surface-container-lowest p-margin-md rounded-xl shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[16px]">badge</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Billing Identity</h3>
+</div>
+<a class="font-label-sm text-label-sm text-primary hover:underline font-semibold" href="#">Edit Meta</a>
+</div>
+<div class="space-y-space-sm">
+<div>
+<div class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Legal Freelancer Name</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-0.5">Alex Rivers</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Senior Systems &amp; UI Architect</div>
+</div>
+<div class="pt-space-xs border-t border-surface-container-low space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">GSTIN / Tax ID</span>
+<span class="font-mono text-body-sm text-on-surface font-semibold bg-surface-container-low px-space-xs py-0.5 rounded">29AAACH7409R1ZZ</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Jurisdiction</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Karnataka, India</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Base Currency</span>
+<span class="font-body-sm text-body-sm text-primary font-semibold">₹ INR (Indian Rupee)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Linked Settlement Node</span>
+<span class="font-body-sm text-body-sm text-on-surface font-mono">Bank (•••• 4821)</span>
+</div>
+</div>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-tertiary">verified_user</span>
+<div class="text-body-sm font-body-sm text-on-surface">
+              Tax status: Verified for <strong class="text-on-surface font-medium">Reverse Charge Mechanism (RCM)</strong> on overseas exports.
+            </div>
+</div>
+</div>
+<!-- Card 3: Security & Encryption Protocol -->
+<div class="bg-surface-container-lowest p-margin-md rounded-xl shadow-sm space-y-space-md">
+<div class="flex items-center gap-space-xs">
+<div class="w-7 h-7 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[16px]">shield</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Security &amp; Encryption</h3>
+</div>
+<div class="space-y-space-sm font-body-sm text-body-sm">
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-tertiary mt-0.5">enhanced_encryption</span>
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">256-bit AES Local Vault</div>
+<div class="text-on-surface-variant text-body-sm">FastAPI secrets stored in AES-encrypted keyring on disk.</div>
+</div>
+</div>
+<div class="flex items-start gap-space-xs pt-space-xs">
+<span class="material-symbols-outlined text-[18px] text-tertiary mt-0.5">timer</span>
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Session Inactivity Lock</div>
+<div class="text-on-surface-variant text-body-sm">Automatic token invalidation after 30 minutes.</div>
+</div>
+</div>
+<div class="flex items-start gap-space-xs pt-space-xs">
+<span class="material-symbols-outlined text-[18px] text-tertiary mt-0.5">phonelink_lock</span>
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Two-Factor Authentication</div>
+<div class="text-on-surface-variant text-body-sm">TOTP Hardware Authenticator linked &amp; active.</div>
+</div>
+</div>
+</div>
+<!-- Notification Toast Container for interactive feedback -->
+<div class="hidden p-space-sm rounded-lg bg-primary-fixed text-primary font-label-sm text-label-sm font-medium items-center justify-between" id="toastFeedback">
+<span id="toastFeedbackText">Action executed successfully.</span>
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive JavaScript Micro-actions -->
+<script>
+    // Reveal eye toggle for Webhook Secret
+    const toggleSecretEye = document.getElementById('toggleSecretEye');
+    const webhookSecretInput = document.getElementById('webhookSecretInput');
+    if (toggleSecretEye && webhookSecretInput) {
+      toggleSecretEye.addEventListener('click', () => {
+        const isPass = webhookSecretInput.type === 'password';
+        webhookSecretInput.type = isPass ? 'text' : 'password';
+        toggleSecretEye.firstElementChild.innerText = isPass ? 'visibility_off' : 'visibility';
+      });
+    }
+
+    // Reveal eye toggle for PayPal Secret
+    const ppToggleSecretEye = document.getElementById('ppToggleSecretEye');
+    const ppSecretInput = document.getElementById('ppSecretInput');
+    if (ppToggleSecretEye && ppSecretInput) {
+      ppToggleSecretEye.addEventListener('click', () => {
+        const isPass = ppSecretInput.type === 'password';
+        ppSecretInput.type = isPass ? 'text' : 'password';
+        ppToggleSecretEye.firstElementChild.innerText = isPass ? 'visibility_off' : 'visibility';
+      });
+    }
+
+    // Webhook URL Copy Action
+    const copyWebhookBtn = document.getElementById('copyWebhookBtn');
+    const copyWebhookLabel = document.getElementById('copyWebhookLabel');
+    if (copyWebhookBtn) {
+      copyWebhookBtn.addEventListener('click', () => {
+        navigator.clipboard?.writeText('https://api.pulsepay.io/v2/webhook/paypal');
+        copyWebhookLabel.innerText = 'Copied!';
+        setTimeout(() => {
+          copyWebhookLabel.innerText = 'Copy URL';
+        }, 2000);
+      });
+    }
+
+    // Ping Endpoint simulation
+    const pingBtn = document.getElementById('pingBtn');
+    const toastFeedback = document.getElementById('toastFeedback');
+    const toastFeedbackText = document.getElementById('toastFeedbackText');
+
+    function triggerToast(text) {
+      if (toastFeedback && toastFeedbackText) {
+        toastFeedbackText.innerText = text;
+        toastFeedback.classList.remove('hidden');
+        toastFeedback.classList.add('flex');
+        setTimeout(() => {
+          toastFeedback.classList.add('hidden');
+          toastFeedback.classList.remove('flex');
+        }, 3500);
+      }
+    }
+
+    if (pingBtn) {
+      pingBtn.addEventListener('click', () => {
+        pingBtn.disabled = true;
+        pingBtn.innerText = 'Pinging...';
+        setTimeout(() => {
+          pingBtn.disabled = false;
+          pingBtn.innerHTML = '<span class="material-symbols-outlined text-[16px]">wifi_tethering</span><span>Ping Endpoint</span>';
+          triggerToast('HTTP 200 OK: 127.0.0.1:8001 responded in 9.8ms');
+        }, 600);
+      });
+    }
+
+    // OAuth Handshake Simulation
+    const verifyOauthBtn = document.getElementById('verifyOauthBtn');
+    if (verifyOauthBtn) {
+      verifyOauthBtn.addEventListener('click', () => {
+        verifyOauthBtn.innerText = 'Verifying Handshake...';
+        setTimeout(() => {
+          verifyOauthBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span><span>Verify OAuth Handshake</span>';
+          triggerToast('PayPal OAuth Handshake Verified (Status 200 OK)');
+        }, 800);
+      });
+    }
+
+    // DB VACUUM Simulation
+    const vacuumBtn = document.getElementById('vacuumBtn');
+    if (vacuumBtn) {
+      vacuumBtn.addEventListener('click', () => {
+        vacuumBtn.innerText = 'Executing VACUUM...';
+        setTimeout(() => {
+          vacuumBtn.innerHTML = '<span class="material-symbols-outlined text-[16px]">cleaning_services</span><span>Force DB VACUUM &amp; Re-index</span>';
+          triggerToast('VACUUM complete. Page cache pruned, 4.2 MB retained.');
+        }, 900);
+      });
+    }
+
+    // Test All Connections
+    const testConnectionsBtn = document.getElementById('testConnectionsBtn');
+    if (testConnectionsBtn) {
+      testConnectionsBtn.addEventListener('click', () => {
+        triggerToast('All 4 Nodes Verified: FastAPI, SQLite WAL, PayPal API & AI Engine');
+      });
+    }
+
+    // Save Changes Action
+    const saveChangesBtn = document.getElementById('saveChangesBtn');
+    if (saveChangesBtn) {
+      saveChangesBtn.addEventListener('click', () => {
+        saveChangesBtn.innerText = 'Writing to SQLite...';
+        setTimeout(() => {
+          saveChangesBtn.innerHTML = '<span class="material-symbols-outlined text-[16px]">check_circle</span><span>Save Changes</span>';
+          triggerToast('Credentials committed securely to AES Vault & SQLite.');
+        }, 700);
+      });
+    }
+  </script>
+</div></main></div></body></html>
