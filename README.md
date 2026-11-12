@@ -1,54 +1,85 @@
 # PulsePay AI — Freelance OS
 
-This package contains your original FastAPI + SQLite + PayPal Sandbox application with a refreshed light-theme frontend inspired by the eight Google Stitch references.
+PulsePay AI is an AI-powered freelancer payment assistant built with FastAPI, SQLite, and PayPal Sandbox. It includes a refreshed light-theme frontend inspired by the eight Google Stitch design references.
 
-## What was changed
+## What Was Changed
 
-- Updated the existing frontend theme to a clean light fintech design: white sidebar and cards, soft lavender-grey surfaces, indigo accents, and distinct paid / pending / overdue colors.
-- Kept the original frontend JavaScript controller intact. Existing API URLs, request formats, ML calls, PayPal order creation / approval / capture / verification flow, invoice and follow-up actions remain in the original `front-end/script.js`.
-- Added the overdue invoice KPI and made the Total / Paid / Pending / Overdue KPI cards navigate to their matching invoice filters. Their values are computed from the live invoice records.
-- Kept the backend Python files and SQLite database from your uploaded project unchanged.
-- Kept your original `front-end/backup_legacy` folder.
-- Stored the Stitch source screens, code exports and design briefs under `design-reference/stitch/`.
+- Updated the existing frontend theme to a clean light fintech design with a white sidebar and cards, soft lavender-grey surfaces, indigo accents, and distinct paid, pending, and overdue colors.
+- Kept the original frontend JavaScript controller intact. Existing API URLs, request formats, ML calls, PayPal order creation, approval, capture, and verification flows, invoice actions, and follow-up actions remain in the original `front-end/script.js`.
+- Added the overdue invoice KPI.
+- Made the Total, Paid, Pending, and Overdue KPI cards navigate to their matching invoice filters.
+- KPI values are computed from live invoice records.
+- Kept the backend Python files unchanged.
+- Excluded the local SQLite database from GitHub to protect private data.
+- Kept the original `front-end/backup_legacy` folder.
+- Stored the Stitch source screens, code exports, and design briefs under `design-reference/stitch/`.
 
-## Important security note
+## Important Security Note
 
-Your uploaded `.env` file is intentionally not included in this download. This prevents PayPal secrets from being copied into another archive. Copy your existing local `back-end/.env` from your original project into this package's `back-end` folder using File Explorer. Do not paste the values into chat or frontend files. A safe `.env.example` is included.
+Your actual `.env` file is intentionally excluded from this GitHub repository to protect your PayPal Sandbox credentials.
 
-The included `back-end/invoices.db` is your uploaded local database snapshot. Keep this ZIP and database private.
+A safe `.env.example` file is included as a reference.
 
-## Run the website on Windows
+Before running the backend:
 
-### 1. Start the backend
+1. Open the `back-end` folder.
+2. Make sure a local `.env` file exists in that folder.
+3. If you need to create one, use `.env.example` as a guide.
+4. Add your own PayPal Sandbox credentials to the local `.env` file.
+5. Never upload or share your actual `.env` file.
 
-1. Open `PulsePay_AI\back-end`.
-2. Copy your existing `.env` file from your original project's `back-end` folder into this `back-end` folder.
+The local `back-end/invoices.db` database is intentionally excluded from this repository. It is not published to GitHub. Keep local database files and real payment data private.
+
+## Run the Website on Windows
+
+### 1. Start the Backend
+
+1. Open the `back-end` folder.
+2. Make sure your local `.env` file is configured.
 3. Double-click `run_backend.bat`.
-4. Keep its terminal window open. The backend is expected at `http://127.0.0.1:8001`.
+4. Keep its terminal window open.
 
-For a first-time Python environment, install dependencies from this folder with:
+The backend is expected to run at:
+
+`http://127.0.0.1:8001`
+
+For a first-time Python environment, install dependencies from the backend folder:
 
 ```powershell
 python -m pip install -r requirements.txt
 ```
 
-### 2. Start the frontend
+### 2. Start the Frontend
 
-1. Open the extracted `PulsePay_AI_Redesigned` folder.
-2. Double-click `START_REDESIGNED_FRONTEND.bat` (this starts the server from the correct `front-end` folder).
+1. Open the main `PulsePay_AI_Redesigned` folder.
+2. Double-click `START_REDESIGNED_FRONTEND.bat`. This starts the server from the correct `front-end` folder.
 3. Keep its terminal window open.
 4. Open this address in Chrome:
 
-**http://127.0.0.1:5501/index.html#overview**
+`http://127.0.0.1:5501/index.html#overview`
 
-This uses port **5501** so it will not conflict with an older VS Code Live Server running on port 5500. Do not start the old project's Live Server when checking this redesigned copy.
+This uses port `5501` so it will not conflict with an older VS Code Live Server running on port `5500`.
 
-The frontend uses Google Fonts and Tailwind's CDN for typography and utility styles, so an internet connection is needed for those CDN assets. The local app and backend still run on your computer.
+Do not start the old project's Live Server when checking this redesigned version.
 
-## PayPal safety
+The frontend uses Google Fonts and Tailwind CSS through CDN resources, so an internet connection is needed for those assets. The local application and backend still run on your computer.
 
-No PayPal order is created by the setup scripts. No payment is attempted automatically. PayPal actions only run when you click the existing payment controls. Continue using Sandbox credentials and the existing backend flow.
+## PayPal Safety
 
-## Local URL vs public hosting
+- No PayPal order is created by the setup scripts.
+- No payment is attempted automatically.
+- PayPal actions only run when you interact with the existing payment controls.
+- Continue using PayPal Sandbox credentials for testing.
+- Never expose your PayPal client secret in frontend files or public repositories.
 
-`127.0.0.1` is a local address that works on your own computer; it is not a public website URL. This chat cannot publish the app to a public hosting provider. The ZIP is ready to run locally. Public hosting would require a hosting account and deployment configuration, especially for the private FastAPI backend and environment secrets.
+## Local URL vs Public Hosting
+
+`127.0.0.1` is a local address that works on your own computer. It is not a public website URL.
+
+This repository contains the project source code. It does not automatically host the application online.
+
+Public hosting requires a hosting provider and deployment configuration, especially for the private FastAPI backend and environment secrets.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
